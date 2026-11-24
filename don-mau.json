@@ -1,5 +1,53 @@
 [
  {
+  "name": "fdddd",
+  "dx": "",
+  "drugs": [
+   {
+    "n": "Vigentin 500/62.5mg",
+    "a": "Amoxicillin + Clavulanic",
+    "g": "Kháng sinh",
+    "q": "14",
+    "days": "10",
+    "unit": "viên",
+    "how": "Uống",
+    "m": "1",
+    "t": "",
+    "e": "1",
+    "when": "sau ăn",
+    "free": ""
+   },
+   {
+    "n": "Flagyl 250 mg",
+    "a": "Metronidazol",
+    "g": "Kháng sinh",
+    "q": "20",
+    "days": "7",
+    "unit": "viên",
+    "how": "Uống",
+    "m": "2",
+    "t": 0,
+    "e": "2",
+    "when": "sau ăn",
+    "free": ""
+   },
+   {
+    "n": "Telfast HD 180 mg",
+    "a": "Fexofenadin",
+    "g": "Dị ứng",
+    "q": "10",
+    "days": "5",
+    "unit": "viên",
+    "how": "Uống",
+    "m": "1",
+    "t": "",
+    "e": "",
+    "when": "sau ăn",
+    "free": "Uống 01 khi ngứa nhiều , ngày 01 viên"
+   }
+  ]
+ },
+ {
   "name": "VRT",
   "dx": "",
   "drugs": [
