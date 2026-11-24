@@ -2,6 +2,7 @@
  {
   "n": "Flagyl 250 mg",
   "a": "Metronidazol",
+  "g": "Kháng sinh",
   "q": "20",
   "days": "7",
   "unit": "viên",
@@ -10,12 +11,12 @@
   "t": 0,
   "e": "2",
   "when": "sau ăn",
-  "free": "",
-  "g": "Kháng sinh"
+  "free": ""
  },
  {
   "n": "Alpha choay",
   "a": "Alphachymotrypsin",
+  "g": "Kháng viêm",
   "q": "1",
   "days": "",
   "unit": "hộp",
@@ -24,12 +25,12 @@
   "t": "2",
   "e": "2",
   "when": "sau ăn",
-  "free": "",
-  "g": "Kháng viêm"
+  "free": ""
  },
  {
   "n": "Vigentin 500/62.5mg",
   "a": "Amoxicillin + Clavulanic",
+  "g": "Kháng sinh",
   "q": "14",
   "days": "10",
   "unit": "viên",
@@ -38,12 +39,12 @@
   "t": "",
   "e": "1",
   "when": "sau ăn",
-  "free": "",
-  "g": "Kháng sinh"
+  "free": ""
  },
  {
   "n": "Lecifex 500 mg",
   "a": "Levofloxacin",
+  "g": "Kháng sinh",
   "q": "14",
   "days": "7",
   "unit": "viên",
@@ -52,12 +53,12 @@
   "t": "",
   "e": "1",
   "when": "sau ăn",
-  "free": "",
-  "g": "Kháng sinh"
+  "free": ""
  },
  {
   "n": "Vigentin 250/31.25 mg",
   "a": "Amoxicillin + Clavulanic",
+  "g": "Kháng sinh",
   "q": "14",
   "days": "10",
   "unit": "gói",
@@ -66,12 +67,12 @@
   "t": 0,
   "e": 1,
   "when": "sau ăn",
-  "free": "",
-  "g": "Kháng sinh"
+  "free": ""
  },
  {
   "n": "Telfast HD 180 mg",
   "a": "Fexofenadin",
+  "g": "Dị ứng",
   "q": "10",
   "days": "5",
   "unit": "viên",
@@ -80,12 +81,12 @@
   "t": "",
   "e": "",
   "when": "sau ăn",
-  "free": "Uống 01 khi ngứa nhiều , ngày 01 viên",
-  "g": "Dị ứng"
+  "free": "Uống 01 khi ngứa nhiều , ngày 01 viên"
  },
  {
   "n": "Ondansetron BFS 8mg/4ml",
   "a": "Ondansetron",
+  "g": "Dị ứng",
   "q": "01",
   "days": "1",
   "unit": "ống",
@@ -94,12 +95,12 @@
   "t": "",
   "e": "",
   "when": "sau ăn",
-  "free": " Pha loãng tiêm tĩnh mạch chậm ",
-  "g": "Dị ứng"
+  "free": " Pha loãng tiêm tĩnh mạch chậm "
  },
  {
   "n": "Vincomid 10mg/2ml",
   "a": "Metoclopramid hydroclorid",
+  "g": "Dị ứng",
   "q": "01",
   "days": "1",
   "unit": "ống",
@@ -108,12 +109,12 @@
   "t": "",
   "e": "",
   "when": "sau ăn",
-  "free": " Pha loãng tiêm tĩnh mạch chậm ",
-  "g": "Dị ứng"
+  "free": " Pha loãng tiêm tĩnh mạch chậm "
  },
  {
   "n": "Medrol 16mg Pfizer",
   "a": "Methylprednisolone",
+  "g": "Kháng viêm",
   "q": "",
   "days": "3",
   "unit": "viên",
@@ -122,12 +123,12 @@
   "t": 0,
   "e": "",
   "when": "sau ăn",
-  "free": "Uống sáng 01 viên lúc 8h sáng sau ăn no",
-  "g": "Kháng viêm"
+  "free": "Uống sáng 01 viên lúc 8h sáng sau ăn no"
  },
  {
   "n": "Harnal Ocas 0.4mg Astellas",
   "a": "Tamsulosin",
+  "g": "Tiền liệt tuyến (Alpha-blockers)",
   "q": "",
   "days": "10",
   "unit": "viên",
@@ -136,12 +137,12 @@
   "t": 0,
   "e": 1,
   "when": "sau ăn",
-  "free": "Uống  01 viên lúc 20h tối",
-  "g": "Tiền liệt tuyến (Alpha-blockers)"
+  "free": "Uống  01 viên lúc 20h tối"
  },
  {
   "n": "Xatral XL 10mg",
   "a": "Alfuzosin",
+  "g": "Tiền liệt tuyến (Alpha-blockers)",
   "q": "",
   "days": "10",
   "unit": "viên",
@@ -150,12 +151,12 @@
   "t": 0,
   "e": 1,
   "when": "sau ăn",
-  "free": "Uống 01 viên lúc 20h tối",
-  "g": "Tiền liệt tuyến (Alpha-blockers)"
+  "free": "Uống 01 viên lúc 20h tối"
  },
  {
   "n": "Diclofenac DHG",
   "a": "Diclofenac",
+  "g": "GIẢM ĐAU , GIẢM CO THẮT",
   "q": "14",
   "days": "5",
   "unit": "viên",
@@ -164,12 +165,12 @@
   "t": "",
   "e": "",
   "when": "sau ăn",
-  "free": "Uống sáng 01 viên lúc đau nhiều",
-  "g": "GIẢM ĐAU , GIẢM CO THẮT"
+  "free": "Uống sáng 01 viên lúc đau nhiều"
  },
  {
   "n": "Neurontin 300mg VIATRIS",
   "a": "Gabapentin",
+  "g": "GIẢM ĐAU , GIẢM CO THẮT",
   "q": "14",
   "days": "5",
   "unit": "viên",
@@ -178,12 +179,12 @@
   "t": "",
   "e": "",
   "when": "sau ăn",
-  "free": "Uống sáng 01 viên lúc đau nhiều",
-  "g": "GIẢM ĐAU , GIẢM CO THẮT"
+  "free": "Uống sáng 01 viên lúc đau nhiều"
  },
  {
   "n": "Panadol Extra",
   "a": "Paracetamol 500mg , Caffeine 65mg",
+  "g": "GIẢM ĐAU , GIẢM CO THẮT",
   "q": "14",
   "days": "12",
   "unit": "viên",
@@ -192,12 +193,12 @@
   "t": "",
   "e": "",
   "when": "sau ăn",
-  "free": "Uống sáng 02 viên lúc đau nhiều , sau 4 - 6h uống lại nếu đau",
-  "g": "GIẢM ĐAU , GIẢM CO THẮT"
+  "free": "Uống sáng 02 viên lúc đau nhiều , sau 4 - 6h uống lại nếu đau"
  },
  {
   "n": "Ultracet Janssen",
   "a": "Tramadol hydrochloride 37.5mg, Paracetamol 325mg",
+  "g": "GIẢM ĐAU , GIẢM CO THẮT",
   "q": "14",
   "days": "5",
   "unit": "viên",
@@ -206,12 +207,12 @@
   "t": "",
   "e": "",
   "when": "sau ăn",
-  "free": "Uống 02 viên lúc đau nhiều",
-  "g": "GIẢM ĐAU , GIẢM CO THẮT"
+  "free": "Uống 02 viên lúc đau nhiều"
  },
  {
   "n": "No-spa 40 mg",
   "a": "Drotaverine",
+  "g": "GIẢM ĐAU , GIẢM CO THẮT",
   "q": "14",
   "days": "7",
   "unit": "viên",
@@ -220,12 +221,12 @@
   "t": "",
   "e": "2",
   "when": "sau ăn",
-  "free": "",
-  "g": "GIẢM ĐAU , GIẢM CO THẮT"
+  "free": ""
  },
  {
   "n": "Omeprazol DHG 20mg",
   "a": "Omeprazol",
+  "g": "ỨC CHẾ ACID , GIẢM TIẾT",
   "q": "14",
   "days": "10",
   "unit": "viên",
@@ -234,12 +235,12 @@
   "t": "",
   "e": "",
   "when": "sau ăn",
-  "free": "Uống sáng 01 viên sau ăn trước ăn 30 phút",
-  "g": "ỨC CHẾ ACID , GIẢM TIẾT"
+  "free": "Uống sáng 01 viên sau ăn trước ăn 30 phút"
  },
  {
   "n": "Yumangel Yuhan",
   "a": "Yumangel",
+  "g": "ỨC CHẾ ACID , GIẢM TIẾT",
   "q": "14",
   "days": "5",
   "unit": "gói",
@@ -248,12 +249,12 @@
   "t": "",
   "e": "1",
   "when": "sau ăn",
-  "free": "Uống sáng 01 gói , tối 01 gói sau ăn 2 tiếng",
-  "g": "ỨC CHẾ ACID , GIẢM TIẾT"
+  "free": "Uống sáng 01 gói , tối 01 gói sau ăn 2 tiếng"
  },
  {
   "n": "Medrol 4mg Pfizer",
   "a": "Methylprednisolone ",
+  "g": "Dị ứng",
   "q": "",
   "days": "5",
   "unit": "viên",
@@ -262,12 +263,12 @@
   "t": 0,
   "e": "",
   "when": "sau ăn",
-  "free": "Uống 01 viên lúc 8h sáng sau ăn no",
-  "g": "Dị ứng"
+  "free": "Uống 01 viên lúc 8h sáng sau ăn no"
  },
  {
   "n": "Telfor 30mg DHG",
   "a": "Fexofenadin Hydroclorid",
+  "g": "Dị ứng",
   "q": "",
   "days": "5",
   "unit": "viên",
@@ -276,7 +277,6 @@
   "t": 0,
   "e": 1,
   "when": "sau ăn",
-  "free": "",
-  "g": "Dị ứng"
+  "free": ""
  }
 ]
