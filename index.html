@@ -15,7 +15,7 @@
 var D=JSON.parse(document.getElementById("rx-lock-data").textContent),K="rx_lock_key",DAY=864e5;
 function u8(s){var b=atob(s),u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u}
 function t64(a){var u=new Uint8Array(a),s="";for(var i=0;i<u.length;i++)s+=String.fromCharCode(u[i]);return btoa(s)}
-function show(html){window.__rxlock=1;document.open();document.write(html);document.close()}
+function show(html){function go(){window.__rxlock=1;document.open();document.write(html);document.close()}if(document.readyState==="complete")setTimeout(go,0);else window.addEventListener("load",function(){setTimeout(go,0)})}
 function dec(key){return crypto.subtle.decrypt({name:"AES-GCM",iv:u8(D.i)},key,u8(D.c)).then(function(p){return new TextDecoder().decode(p)})}
 var f=document.getElementById("rxf"),p=document.getElementById("rxp"),b=document.getElementById("rxb"),e=document.getElementById("rxe"),r=document.getElementById("rxr");
 if(!window.crypto||!crypto.subtle){e.textContent="Trình duyệt này quá cũ, không mở được. Hãy dùng Chrome, Edge hoặc Safari mới.";b.disabled=true;return}
