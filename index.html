@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>KÊ ĐƠN THUỐC BÁC SĨ LƯƠNG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2f6;--card:#fff;--field:#fff;--ink:#15212c;--mute:#5f6d7a;--line:#d3dbe3;--line2:#e8edf2;--hover:#f2f7fc;--acc:#0a6cbd;--acc2:#e5f0fa;--accink:#fff;--head:#0b3554;--headink:#fff;--ok:#18805a;--warn:#a86400;--warnbg:#fff4e0;--danger:#c62828;--shadow:0 1px 2px rgba(15,35,55,.06),0 2px 8px rgba(15,35,55,.04)}
+:root[data-theme="teal"]{--bg:#e6f0f1;--line:#cbdcde;--line2:#e1ecee;--hover:#eef7f7;--acc:#0b7d82;--acc2:#dff2f2;--head:#0b4a4f}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0e1319;--card:#161d25;--field:#0f151b;--ink:#e2e8ee;--mute:#92a0ad;--line:#2a3541;--line2:#212a34;--hover:#1c2630;--acc:#4ea6e8;--acc2:#15304a;--accink:#061727;--head:#0a0f14;--warnbg:#3a2a10;--danger:#ff8a80;--ok:#5fd3a0;--shadow:none}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 "Be Vietnam Pro","Segoe UI",system-ui,sans-serif;display:flex;flex-direction:column}
+button,input,select{font:inherit;color:inherit}
+input,select{width:100%;height:34px;padding:0 9px;border:1px solid var(--line);border-radius:6px;background:var(--field);color:var(--ink);caret-color:var(--acc)}
+input::placeholder{color:var(--mute);opacity:.75}
+input:focus,select:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px var(--acc2)}
+button:focus-visible{outline:2px solid var(--acc);outline-offset:1px}
+input.bad{border-color:var(--danger);box-shadow:0 0 0 3px rgba(198,40,40,.12)}
+kbd{font:600 10.5px/1 ui-monospace,Consolas,monospace;padding:2px 5px;border-radius:4px;border:1px solid currentColor;opacity:.75;margin-left:6px}
+.btn{height:34px;display:inline-flex;align-items:center;gap:6px;padding:0 12px;border-radius:6px;border:1px solid var(--line);background:var(--card);cursor:pointer;white-space:nowrap;font-weight:500}
+.btn:hover{background:var(--hover)}
+.btn.pri{background:var(--acc);border-color:var(--acc);color:var(--accink);font-weight:600}
+.btn.pri:hover{filter:brightness(1.07)}
+.btn.sm{height:28px;padding:0 9px;font-size:12.5px}
+.btn.ghost{border-color:transparent;background:none}
+.btn.ghost:hover{background:var(--hover)}
+.btn.dng{color:var(--danger)}
+.btn.warnstate{background:var(--danger);border-color:var(--danger);color:#fff}
+.ib{width:28px;height:28px;display:inline-grid;place-items:center;border-radius:6px;border:1px solid transparent;background:none;cursor:pointer;color:var(--mute);font-size:14px;line-height:1}
+.ib:hover{background:var(--hover);border-color:var(--line);color:var(--ink)}
+.ib.dng:hover{color:var(--danger)}
+.ib.acc{color:var(--acc)}
+/* ===== thanh trên ===== */
+.tb{flex:none;display:flex;align-items:center;gap:14px;padding:8px 14px;background:var(--head);color:var(--headink);flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.logo{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.14);display:grid;place-items:center;font:700 16px/1 Georgia,serif;letter-spacing:-.5px}
+.brand b{display:block;font-size:15px;letter-spacing:.3px}
+.brand small{display:block;font-size:12px;opacity:.78;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tb .sp{flex:1}
+.tb .today{font-size:12.5px;opacity:.85}
+.tb .btn{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.22);color:var(--headink)}
+.tb .btn:hover{background:rgba(255,255,255,.18)}
+.tb .btn.pri{background:#fff;color:var(--head);border-color:#fff}
+.tb .btn.warnstate{background:var(--danger);border-color:var(--danger);color:#fff}
+/* ===== bố cục ===== */
+.app{flex:1;min-height:0;display:grid;grid-template-columns:300px minmax(0,1fr) minmax(400px,36vw);gap:12px;padding:12px}
+body.nopv .app{grid-template-columns:300px minmax(0,1fr)}
+body.nopv .pv{display:none}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}
+.col{min-height:0;overflow:auto}
+.side{display:flex;flex-direction:column;overflow:hidden}
+.work{display:flex;flex-direction:column;gap:12px;min-width:0}
+.ch{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line2);font-weight:600}
+.ch .t{font-size:13px;text-transform:uppercase;letter-spacing:.5px;color:var(--mute)}
+.ch .sp{flex:1}
+.pill{display:inline-block;min-width:20px;text-align:center;padding:1px 7px;border-radius:999px;background:var(--acc2);color:var(--acc);font-size:11.5px;font-weight:700}
+/* ===== người bệnh ===== */
+.pt .grid{display:grid;grid-template-columns:minmax(0,2fr) 76px 116px minmax(0,1fr);gap:8px 10px;padding:12px 14px}
+.fl span{display:block;font-size:11.5px;font-weight:600;color:var(--mute);margin:0 0 3px;letter-spacing:.2px}
+.fl.wide{grid-column:1/-2}
+.seg{display:flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;height:34px}
+.seg button{flex:1;border:0;background:var(--field);cursor:pointer;font-weight:500}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed=true]{background:var(--acc);color:var(--accink);font-weight:600}
+#f_name{font-weight:600;text-transform:uppercase}
+/* ===== kê thuốc ===== */
+.rxc{display:flex;flex-direction:column}
+.work>.card{flex:none}
+.tools{display:flex;gap:8px;align-items:center;padding:12px 14px;border-bottom:1px solid var(--line2);flex-wrap:wrap;position:sticky;top:0;z-index:20;background:var(--card);border-radius:10px 10px 0 0}
+.sbox{position:relative;flex:1 1 320px;min-width:240px}
+.sbox input{height:40px;padding-left:36px;padding-right:46px;font-size:15px;border-width:1.5px}
+.sbox .mg{position:absolute;left:11px;top:11px;width:18px;height:18px;color:var(--mute);pointer-events:none}
+.sbox kbd{position:absolute;right:10px;top:12px;color:var(--mute)}
+.qres{position:absolute;left:0;right:0;top:44px;z-index:30;background:var(--card);border:1px solid var(--line);border-radius:8px;box-shadow:0 10px 28px rgba(10,30,50,.18);max-height:min(420px,60vh);overflow:auto;display:none}
+.qres.on{display:block}
+.qi{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;padding:8px 12px;cursor:pointer;border-bottom:1px solid var(--line2)}
+.qi:last-child{border-bottom:0}
+.qi[aria-selected=true]{background:var(--acc2)}
+.qi .n{font-weight:600}
+.qi mark{background:none;color:var(--acc);text-decoration:underline;text-underline-offset:2px}
+.qi .a{font-size:12.5px;color:var(--mute);grid-column:1}
+.qi .u{font-size:12.5px;color:var(--ink);opacity:.85;grid-column:1/-1}
+.qi .g{font-size:11px;color:var(--mute);border:1px solid var(--line);border-radius:999px;padding:0 7px;align-self:start;white-space:nowrap;max-width:160px;overflow:hidden;text-overflow:ellipsis}
+.qi.new .n{color:var(--acc)}
+.qhint{padding:7px 12px;font-size:11.5px;color:var(--mute);background:var(--hover);border-top:1px solid var(--line2);position:sticky;bottom:0}
+.alld{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--mute)}
+.alld input{width:56px;height:34px;text-align:center}
+.rows{padding:10px 14px 4px}
+.rw{display:grid;grid-template-columns:28px minmax(0,1fr);gap:6px 10px;padding:9px 10px 9px 8px;border:1px solid var(--line);border-radius:8px;margin-bottom:8px;background:var(--card);}
+.rw.flash{transition:none}.rw{transition:background-color .6s}
+:root.notr .rw{transition:none}
+.rw:focus-within{border-color:var(--acc);box-shadow:0 0 0 3px var(--acc2)}
+.rw.flash{background:var(--acc2)}
+.rw .no{width:26px;height:26px;border-radius:50%;background:var(--acc2);color:var(--acc);display:grid;place-items:center;font-weight:700;font-size:12.5px;margin-top:4px}
+.rw .bd{display:flex;flex-direction:column;gap:6px;min-width:0}
+.r1{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) auto auto;gap:6px;align-items:center}
+.r1 .nm{font-weight:600}
+.r1 .ac{font-size:13px;color:var(--mute)}
+.tot{font-weight:700;white-space:nowrap;padding:0 6px;min-width:70px;text-align:right}
+.tot.z{color:var(--mute);font-weight:400;font-size:12px}
+.ra{display:flex;gap:0}
+.r2{display:grid;grid-template-columns:62px 96px 84px minmax(0,1fr) minmax(0,1fr);gap:6px}
+.r2 label span{display:block;font-size:10.5px;font-weight:600;color:var(--mute);text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px}
+.r2 input,.r2 select,.r3 input{height:32px}
+.r2 .ds{font-weight:600;letter-spacing:.5px;text-align:center}
+.r2 .dy{text-align:center;font-weight:600}
+.r3{display:flex;gap:6px;align-items:center}
+.r3 .lb{font-size:10.5px;font-weight:600;color:var(--mute);text-transform:uppercase;letter-spacing:.4px;white-space:nowrap}
+.r3 input{font-size:13px}
+.r3 .tag{flex:none}
+.r3 input:placeholder-shown{border-style:dashed}
+.tag{font-size:11px;font-weight:600;padding:1px 7px;border-radius:999px;white-space:nowrap}
+.tag.dup{background:var(--warnbg);color:var(--warn)}
+.tag.grp{border:1px solid var(--line);color:var(--mute);font-weight:500;max-width:150px;overflow:hidden;text-overflow:ellipsis}
+.gsave{display:flex;gap:6px;align-items:center;padding:6px 8px;background:var(--hover);border-radius:6px;font-size:12.5px}
+.gsave input{height:30px}
+.empty{padding:26px 10px;text-align:center;color:var(--mute);border:1.5px dashed var(--line);border-radius:8px;margin-bottom:8px}
+.rxf{display:flex;gap:8px;align-items:center;padding:6px 14px 12px;flex-wrap:wrap}
+.rxf .sp{flex:1}
+.rxf .sum{font-size:13px;color:var(--mute)}
+.rxf .sum b{color:var(--ink)}
+/* ===== cột trái ===== */
+.tabs{display:flex;border-bottom:1px solid var(--line2);flex:none}
+.tabs button{flex:1;border:0;background:none;padding:11px 4px 9px;cursor:pointer;font-weight:600;font-size:13px;color:var(--mute);border-bottom:2px solid transparent;display:flex;align-items:center;justify-content:center;gap:5px}
+.tabs button[aria-selected=true]{color:var(--acc);border-bottom-color:var(--acc)}
+.tabs .pill{font-size:10.5px;padding:0 6px}
+.pane{flex:1;min-height:0;overflow:auto;padding:10px 12px;display:none}
+.pane.on{display:block}
+.pane .flt{margin-bottom:8px;height:32px}
+.hint{font-size:12.5px;color:var(--mute);margin:6px 0}
+.grp{margin-bottom:6px}
+.ghead{display:flex;align-items:center;gap:4px;position:sticky;top:-10px;background:var(--card);z-index:1;padding:2px 0}
+.gtg{flex:1;min-width:0;text-align:left;border:0;background:none;cursor:pointer;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.4px;color:var(--mute);padding:6px 2px;display:flex;align-items:center;gap:6px}
+.gtg .lbl{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.li{display:flex;align-items:center;gap:4px;border-radius:6px;padding:2px 2px 2px 8px}
+.li:hover,.li:focus-within{background:var(--hover)}
+.li .main{flex:1;min-width:0;border:0;background:none;text-align:left;cursor:pointer;padding:5px 0}
+.li .main b{display:block;font-weight:600;font-size:13.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.li .main small{display:block;color:var(--mute);font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.li .lact{display:flex;opacity:0}
+.li:hover .lact,.li:focus-within .lact{opacity:1}
+.edit{display:flex;gap:4px;padding:4px 0}
+.edit input{height:30px}
+.tp{border:1px solid var(--line);border-radius:8px;padding:9px 10px;margin-bottom:8px}
+.tp b{display:block}
+.tp .dx{font-size:12.5px;color:var(--acc);margin:1px 0}
+.tp .ds{font-size:12px;color:var(--mute);margin:3px 0 7px}
+.tp .ac{display:flex;gap:6px;flex-wrap:wrap}
+.newtp{display:flex;gap:6px;margin-bottom:6px}
+.newtp input{height:32px}
+/* ===== xem trước ===== */
+.pv{display:flex;flex-direction:column;overflow:hidden}
+.pvwrap{flex:1;min-height:0;overflow:auto;background:repeating-linear-gradient(45deg,var(--bg),var(--bg) 8px,var(--line2) 8px,var(--line2) 9px);padding:14px;border-radius:0 0 10px 10px}
+/* ===== thanh trạng thái ===== */
+.sb{flex:none;display:flex;gap:16px;align-items:center;padding:5px 14px;font-size:12px;color:var(--mute);border-top:1px solid var(--line);background:var(--card);flex-wrap:wrap}
+.sb .sp{flex:1}
+.sb .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ok);margin-right:5px;vertical-align:1px}
+.sb .dot.off{background:var(--mute)}
+.sb .dot.warn{background:var(--warn)}
+.sb kbd{margin-left:0;margin-right:3px}
+/* ===== cài đặt ===== */
+dialog{border:0;border-radius:12px;padding:0;width:min(640px,94vw);max-height:90vh;background:var(--card);color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(8,20,32,.45)}
+.dh{display:flex;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line2);position:sticky;top:0;background:var(--card);z-index:2}
+.dh b{flex:1;font-size:16px}
+.db{padding:4px 18px 18px;overflow:auto}
+.sec{padding:14px 0;border-bottom:1px solid var(--line2)}
+.sec:last-child{border-bottom:0}
+.sec h3{margin:0 0 6px;font-size:14px}
+.sec label{display:block;font-size:12px;font-weight:600;color:var(--mute);margin:8px 0 3px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;align-items:center}
+.thm{display:flex;gap:8px}
+.thm button{flex:1;height:56px;border-radius:8px;border:2px solid var(--line);cursor:pointer;font-weight:600;font-size:12.5px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px}
+.thm button[aria-pressed=true]{border-color:var(--acc);box-shadow:0 0 0 3px var(--acc2)}
+.sigprev{background:#fff;border:1px solid var(--line);border-radius:6px;padding:4px 8px;display:inline-flex;align-items:center;min-height:44px;min-width:120px}
+.sigprev img{max-height:40px;max-width:160px}
+.msg{font-size:12.5px;color:var(--mute);margin:8px 0 0;min-height:1em}
+/* ===== tờ giấy A5 (giữ nguyên mẫu in) ===== */
+.paper{background:#fff;color:#000;display:flex;flex-direction:column;width:148mm;min-height:210mm;margin:0 auto;padding:11mm 12mm;font:16px/1.45 "Times New Roman",Times,serif;box-shadow:0 2px 14px rgba(0,0,0,.18);transform-origin:top center}
+.hd{display:flex;justify-content:space-between;font-weight:700;font-size:13.5px}
+.hd .l div:nth-child(2){padding-left:36px}
+.paper h3{text-align:center;font-size:22px;margin:22px 0 16px;letter-spacing:.5px}
+.pi{font-size:16.5px;margin:2px 0}
+.rx{margin:18px 0 0;padding:0}
+.rx li{margin:0 0 14px 20px;padding-left:4px}
+.rx .t{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:16.5px}
+.rx .t b{font-size:17.5px}.rx .t i{font-size:13px;font-weight:400}
+.rx .q{white-space:nowrap}
+.rx .u{margin:10px 0 0 4px;font-size:16px}
+.ft{margin-top:auto;padding-top:16px;display:flex;justify-content:space-between;align-items:flex-start}
+.cnt{margin:0 0 0 16px;font-size:14px;font-style:normal;line-height:1.45}
+.sig{position:relative;left:10mm;width:250px;font-size:14.5px}
+.sig .sg{height:56px;display:flex;align-items:center}
+.sig .sg img{max-height:56px;max-width:170px}
+.paper.fit1 h3{margin:14px 0 10px}.paper.fit1 .rx{margin-top:10px}.paper.fit1 .rx li{margin-bottom:8px}.paper.fit1 .rx .u{margin-top:3px}
+.paper.fit2 .pi,.paper.fit2 .rx .t{font-size:15px}.paper.fit2 .rx .t b{font-size:16px}.paper.fit2 .rx .u{font-size:14.5px}.paper.fit2 .rx li{margin-bottom:5px}
+.pvnote{font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--warnbg);color:var(--warn)}
+/* ===== màn hình hẹp ===== */
+@media(max-width:1240px){
+ body{height:auto;display:block}
+ .app,body.nopv .app{grid-template-columns:270px minmax(0,1fr);height:auto}
+ .col{overflow:visible}
+ .side{max-height:80vh;position:sticky;top:12px;align-self:start}
+ .pv{grid-column:1/-1}
+ .pvwrap{overflow:auto}
+}
+@media(max-width:860px){
+ .app,body.nopv .app{grid-template-columns:1fr;padding:8px;gap:8px}
+ .side{position:static;max-height:70vh;order:2}
+ .work{order:1}.pv{order:3}
+ .pt .grid{grid-template-columns:1fr 70px 110px}
+ .pt .grid .fl:nth-child(4){grid-column:1/-1}
+ .fl.wide{grid-column:1/-1}
+ .spc{display:none}
+ .r1{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"nm nm" "ac ac" "tot ra"}
+ .r1 .nm{grid-area:nm}.r1 .ac{grid-area:ac}.r1 .tot{grid-area:tot;text-align:left;padding:0}.r1 .ra{grid-area:ra}
+ .ch{flex-wrap:wrap}
+ .r3 .tag.grp{display:none}
+ .r2{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .tb .today,.tb kbd,.sb .keys{display:none}
+ .brand small{max-width:52vw}
+}
+@media print{
+ @page{size:A5 portrait;margin:0}
+ html,body{height:auto;display:block;background:#fff}
+ .tb,.side,.work,.sb,.pv .ch,dialog,#toast{display:none!important}
+ .app{display:block!important;padding:0!important;height:auto!important}
+ .pv,body.nopv .pv{display:block!important;border:0;box-shadow:none;background:none;overflow:visible}
+ .pvwrap{padding:0;background:none;overflow:visible}
+ .paper{zoom:1!important;box-shadow:none;width:148mm;min-height:210mm;margin:0;padding:11mm 12mm;overflow:hidden}
+}
+</style>
+</head>
+<body>
+<header class="tb">
+ <div class="brand"><div class="logo">Rx</div><div><b>KÊ ĐƠN THUỐC</b><small>BVĐK Tân Yên · Khoa Ngoại · BS. Trần Văn Lương</small></div></div>
+ <div class="sp"></div>
+ <span class="today" id="today"></span>
+ <button class="btn" id="reset" title="Xóa đơn hiện tại, bắt đầu đơn mới">Đơn mới<kbd>Alt+N</kbd></button>
+ <button class="btn" id="tgpv" title="Ẩn/hiện bản xem trước">Xem trước</button>
+ <button class="btn" id="openset" title="Giao diện, GitHub, sao lưu, chữ ký">Cài đặt</button>
+ <button class="btn pri" id="print">In đơn<kbd>Ctrl+P</kbd></button>
+</header>
+
+<main class="app">
+ <!-- ===== CỘT TRÁI: thư viện / đơn mẫu / gần đây ===== -->
+ <aside class="card col side">
+  <div class="tabs" role="tablist">
+   <button role="tab" data-tab="lib" aria-selected="true">Thư viện <span class="pill" id="libn">0</span></button>
+   <button role="tab" data-tab="tpl" aria-selected="false">Đơn mẫu <span class="pill" id="tpln">0</span></button>
+   <button role="tab" data-tab="hist" aria-selected="false">Gần đây <span class="pill" id="histn">0</span></button>
+  </div>
+  <div class="pane on" id="p_lib">
+   <input class="flt" id="lf" placeholder="Lọc thư viện…" autocomplete="off">
+   <div id="lib"></div>
+   <p class="hint">Bấm vào tên thuốc để thêm vào đơn. Rê chuột vào thuốc để đổi nhóm hoặc xóa.</p>
+  </div>
+  <div class="pane" id="p_tpl">
+   <p class="hint" style="margin-top:0">Lưu cả đơn đang kê thành mẫu (ví dụ “Sau mổ ruột thừa”), lần sau bấm <b>Dùng</b> là có ngay toàn bộ thuốc.</p>
+   <div class="newtp"><input id="tpname" placeholder="Tên đơn mẫu" autocomplete="off"><button class="btn sm pri" id="tpsave">Lưu</button></div>
+   <p class="msg" id="tpmsg" style="margin:0 0 6px"></p>
+   <div id="tpl"></div>
+  </div>
+  <div class="pane" id="p_hist">
+   <input class="flt" id="hf" placeholder="Tìm theo tên người bệnh, chẩn đoán…" autocomplete="off">
+   <div id="hist"></div>
+   <p class="hint">Đơn được ghi lại mỗi lần in. Chỉ lưu trên máy này, không gửi lên GitHub.</p>
+  </div>
+ </aside>
+
+ <!-- ===== CỘT GIỮA: người bệnh + kê thuốc ===== -->
+ <section class="col work">
+  <div class="card pt">
+   <div class="ch"><span class="t">Thông tin người bệnh</span><span class="sp"></span><kbd style="color:var(--mute)">F4</kbd></div>
+   <div class="grid">
+    <label class="fl"><span>Họ và tên</span><input id="f_name" data-k="name" data-nx="f_age" autocomplete="off"></label>
+    <label class="fl"><span>Tuổi</span><input id="f_age" data-k="age" data-nx="f_addr" inputmode="numeric" autocomplete="off"></label>
+    <div class="fl"><span>Giới tính</span><div class="seg" id="sex"><button type="button" data-sex="Nam">Nam</button><button type="button" data-sex="Nữ">Nữ</button></div></div>
+    <label class="fl"><span>Số đơn</span><input data-k="so" autocomplete="off" placeholder="(để trống)"></label>
+    <label class="fl wide"><span>Địa chỉ</span><input id="f_addr" data-k="addr" data-nx="f_dx" list="addrlist" autocomplete="off"></label>
+    <span class="spc"></span>
+    <label class="fl" style="grid-column:1/-1"><span>Chẩn đoán</span><input id="f_dx" data-k="dx" data-nx="q" list="dxlist" autocomplete="off" placeholder="Gõ hoặc chọn chẩn đoán đã dùng"></label>
+   </div>
+  </div>
+
+  <div class="card rxc">
+   <div class="ch"><span class="t">Chỉ định thuốc</span> <span class="pill" id="rxn">0</span><span class="sp"></span>
+    <button class="btn sm ghost" id="saveall" title="Lưu mọi thuốc trong đơn vào thư viện">Lưu cả đơn vào thư viện</button>
+    <button class="btn sm ghost" id="astpl" title="Lưu đơn này thành đơn mẫu">Lưu thành đơn mẫu</button>
+   </div>
+   <div class="tools">
+    <div class="sbox">
+     <svg class="mg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+     <input id="q" placeholder="Tìm thuốc: tên, hoạt chất hoặc nhóm… rồi Enter" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="qres">
+     <kbd>F2</kbd>
+     <div class="qres" id="qres" role="listbox"></div>
+    </div>
+    <div class="alld" title="Đặt cùng số ngày cho mọi thuốc trong đơn">Số ngày cả đơn <input id="alld" inputmode="numeric" placeholder="7"><button class="btn sm" id="alldok">Áp dụng</button></div>
+   </div>
+   <div class="rows" id="rows"></div>
+   <div class="rxf">
+    <button class="btn sm" id="add">+ Thêm dòng trống</button>
+    <span class="sp"></span>
+    <span class="sum" id="sum"></span>
+   </div>
+  </div>
+ </section>
+
+ <!-- ===== CỘT PHẢI: xem trước bản in ===== -->
+ <section class="card pv" id="pv">
+  <div class="ch"><span class="t">Xem trước bản in · A5</span><span id="pvnote"></span><span class="sp"></span><button class="btn sm pri" id="print2">In đơn</button></div>
+  <div class="pvwrap" id="pvwrap"><div class="paper" id="paper"></div></div>
+ </section>
+</main>
+
+<footer class="sb">
+ <span id="sbcnt"></span>
+ <span><span class="dot" id="sbdot"></span><span id="sbsave">Đã tự lưu trên máy</span></span>
+ <span id="sbgh"></span>
+ <span class="sp"></span>
+ <span class="keys"><kbd>F2</kbd>tìm thuốc · <kbd>↑↓</kbd><kbd>Enter</kbd>chọn · <kbd>F4</kbd>người bệnh · <kbd>Ctrl+P</kbd>in · <kbd>Alt+N</kbd>đơn mới</span>
+</footer>
+
+<datalist id="grouplist"></datalist>
+<datalist id="dxlist"></datalist>
+<datalist id="addrlist"></datalist>
+<datalist id="doselist"><option value="1-0-1"><option value="1-1-1"><option value="2-0-2"><option value="1-0-0"><option value="0-0-1"><option value="2-2-2"><option value="1/2-0-1/2"></datalist>
+<datalist id="howlist"><option value="Uống"><option value="Ngậm dưới lưỡi"><option value="Tiêm tĩnh mạch"><option value="Tiêm bắp"><option value="Bôi ngoài da"><option value="Nhỏ"><option value="Đặt"><option value="Ngâm rửa"></datalist>
+<datalist id="whenlist"><option value="sau ăn"><option value="trước ăn"><option value="trong bữa ăn"><option value="sau ăn no"><option value="khi đau"></datalist>
+
+<dialog id="set">
+ <div class="dh"><b>Cài đặt</b><button class="ib" id="closeset" title="Đóng" aria-label="Đóng">✕</button></div>
+ <div class="db">
+  <div class="sec">
+   <h3>Giao diện</h3>
+   <div class="thm">
+    <button data-th="light" style="background:linear-gradient(#0b3554 0 30%,#eef2f6 30%);color:#15212c">Sáng</button>
+    <button data-th="teal" style="background:linear-gradient(#0b4a4f 0 30%,#e6f0f1 30%);color:#15212c">Xanh ngọc</button>
+    <button data-th="dark" style="background:linear-gradient(#0a0f14 0 30%,#161d25 30%);color:#e2e8ee">Tối</button>
+   </div>
+  </div>
+  <div class="sec">
+   <h3>Đồng bộ GitHub</h3>
+   <p class="hint">Mỗi lần mở trang, thư viện thuốc và đơn mẫu tự tải từ GitHub. Muốn thay đổi trên máy này tự lưu lên GitHub thì nhập mã truy cập (token). Mã chỉ lưu trên máy này. Thông tin người bệnh không bao giờ gửi lên GitHub.</p>
+   <div class="row2"><div><label>Tài khoản GitHub</label><input id="gh_o" autocomplete="off" autocapitalize="off" spellcheck="false"></div><div><label>Tên kho (repository)</label><input id="gh_r" autocomplete="off" autocapitalize="off" spellcheck="false"></div></div>
+   <label>Mã truy cập (token)</label><input id="gh_t" type="password" autocomplete="off" placeholder="github_pat_...">
+   <div class="acts"><button class="btn sm pri" id="gh_save">Lưu cài đặt</button><button class="btn sm" id="gh_pull">Tải từ GitHub</button><button class="btn sm" id="gh_push">Đẩy lên GitHub</button><button class="btn sm dng" id="gh_clear">Xóa mã</button></div>
+   <p class="msg" id="ghmsg"></p>
+  </div>
+  <div class="sec">
+   <h3>Sao lưu thư viện</h3>
+   <div class="acts" style="margin-top:4px"><button class="btn sm" id="libfs">Liên kết file thư viện</button><button class="btn sm" id="libexp">Xuất ra file</button><button class="btn sm" id="libimp">Nhập từ file</button><input type="file" id="libf" accept=".json,application/json" hidden></div>
+   <p class="msg" id="libmsg"></p>
+  </div>
+  <div class="sec">
+   <h3>Chữ ký</h3>
+   <p class="hint">Chữ ký chỉ lưu trên máy này, không đưa lên GitHub. Chọn ảnh chữ ký (PNG/JPG), hoặc chọn file đơn thuốc cũ (.html) để lấy lại chữ ký có sẵn trong đó.</p>
+   <div class="acts"><span class="sigprev" id="sigprev"></span><button class="btn sm" id="sigpick">Chọn chữ ký</button><button class="btn sm dng" id="sigdel">Xóa chữ ký</button><input type="file" id="sigf" accept="image/*,.html,.htm" hidden></div>
+   <p class="msg" id="sigmsg"></p>
+  </div>
+ </div>
+</dialog>
+
+<script>
+const KEY="donthuoc_v1",SK="donthuoc_sig",LK="donthuoc_lib_v1",TK="donthuoc_tpl_v1",HK="donthuoc_hist_v1",XK="donthuoc_recent",THK="donthuoc_theme2",PVK="donthuoc_pv";
+const DOC_NAME="TRẦN VĂN LƯƠNG",DOC_TITLE="Bác sĩ";
+const UNITS=["viên","gói","ống","hộp","chai","lọ","tuýp","vỉ","túi"];
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const todayStr=()=>{const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
+const blank=()=>({n:"",a:"",g:"",q:"",days:"",unit:"viên",how:"Uống",m:1,t:0,e:1,when:"sau ăn",free:""});
+const def=()=>({hospital:"BỆNH VIỆN ĐA KHOA TÂN YÊN",dept:"KHOA NGOẠI",ms:"17D/BV-01",so:"",name:"",age:"",sex:"Nữ",addr:"",dx:"",date:todayStr(),doc:DOC_NAME,title:DOC_TITLE,sig:"",drugs:[blank()]});
+const LS={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){return false}}};
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const p2=n=>String(n).padStart(2,"0");
+const clone=o=>JSON.parse(JSON.stringify(o));
+const norm=s=>String(s||"").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[đĐ]/g,"d").toLowerCase();
+const named=()=>S.drugs.filter(d=>(d.n||"").trim());
+
+let S=def();
+{const o=LS.get(KEY,null);if(o&&o.drugs)S=Object.assign(def(),o)}
+S.doc=DOC_NAME;S.title=DOC_TITLE;S.date=todayStr();
+S.drugs=S.drugs.map(d=>Object.assign(blank(),d));
+if(!S.drugs.length)S.drugs=[blank()];
+try{S.sig=localStorage.getItem(SK)||""}catch(e){S.sig=""}
+
+/* ===== Lưu tự động ===== */
+let svT;
+function save(){
+ const o=Object.assign({},S);delete o.sig;
+ const ok=LS.set(KEY,o);
+ $("#sbdot").className="dot"+(ok?"":" warn");
+ $("#sbsave").textContent=ok?"Đã tự lưu trên máy":"Không lưu được (bộ nhớ trình duyệt đầy)";
+}
+
+/* ===== Giao diện ===== */
+function setTheme(k){if(!["light","teal","dark"].includes(k))k="light";document.documentElement.dataset.theme=k;$$("[data-th]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.th===k));try{localStorage.setItem(THK,k)}catch(e){}}
+let th0="light";try{th0=localStorage.getItem(THK)||"light"}catch(e){}
+setTheme(th0);
+$("#today").textContent=new Date().toLocaleDateString("vi-VN",{weekday:"long",day:"2-digit",month:"2-digit",year:"numeric"});
+
+/* ===== Tính số lượng & cách dùng ===== */
+const num=v=>{v=parseFloat(String(v??"").replace(",","."));return v>0?v:0};
+const fmtN=v=>String(Math.round(num(v)*100)/100);
+function total(d){
+ const days=num(d.days);if(!days)return "";
+ const sum=num(d.m)+num(d.t)+num(d.e);if(!sum)return "";
+ const n=Math.round(days*sum*100)/100;
+ return Number.isInteger(n)&&n<10?p2(n):String(n);
+}
+function autoUsage(d){
+ const parts=[];
+ [["sáng",d.m],["trưa",d.t],["tối",d.e]].forEach(([k,v])=>{v=num(v);if(v>0)parts.push(k+" "+(v<10&&Number.isInteger(v)?p2(v):v)+" "+d.unit)});
+ if(!parts.length)return "";
+ return ((d.how||"").trim()?d.how.trim()+" ":"")+parts.join(" , ")+((d.when||"").trim()?" "+d.when.trim():"");
+}
+function usage(d){return (d.free||"").trim()||autoUsage(d)}
+const doseStr=d=>[d.m,d.t,d.e].map(fmtN).join("-");
+function parseDose(s){
+ s=String(s).trim();if(!s)return [0,0,0];
+ const p=/^\d{3}$/.test(s)?s.split(""):s.split(/[\s\-+]+/).filter(Boolean);
+ if(p.length!==3)return null;
+ const r=p.map(x=>{x=x.replace(",",".");if(/^\d+\/\d+$/.test(x)){const[a,b]=x.split("/").map(Number);return b>0?a/b:NaN}return /^\d*\.?\d+$/.test(x)?parseFloat(x):NaN});
+ return r.some(isNaN)?null:r;
+}
+
+/* ===== Tờ đơn A5 (giữ nguyên mẫu) ===== */
+function render(){
+ const dt=todayStr().split("-");
+ const dd=dt[2]?dt[2]:"..",mm=dt[1]?parseInt(dt[1],10):"..",yy=dt[1]?dt[0]:"....";
+ const items=named().map(d=>`<li><div class="t"><span><b>${esc(d.n)}</b> ${d.a?`<i>(${esc(d.a)})</i>`:""}</span><span class="q">${total(d)?"x &nbsp;"+total(d)+" "+esc(d.unit):""}</span></div>${usage(d)?`<div class="u">[ ${esc(usage(d))} ]</div>`:""}</li>`).join("");
+ $("#paper").innerHTML=`
+ <div class="hd"><div class="l"><div>BỆNH VIỆN ĐA KHOA TÂN YÊN</div><div>KHOA NGOẠI</div></div><div><div>MS: 17D/BV-01</div><div>Số :${esc(S.so)||".................."}</div></div></div>
+ <h3>ĐƠN THUỐC</h3>
+ <div class="pi">Họ tên người bệnh : <b>${esc(S.name.toUpperCase())}</b> &nbsp; Tuổi: ${esc(S.age)} Giới tính : ${esc(S.sex)}</div>
+ <div class="pi">Địa chỉ : ${esc(S.addr)}</div>
+ <div class="pi">Chẩn đoán : ${esc(S.dx)}</div>
+ <ol class="rx">${items}</ol>
+ <div class="ft"><div class="cnt">Cộng khoản : ${named().length}</div>
+ <div class="sig"><div style="font-style:italic;margin-left:-10px">Ngày ${dd} tháng ${mm} năm ${yy}</div>
+ <div style="font-weight:700;margin-top:2px">BÁC SĨ KHÁM BỆNH</div>
+ <div class="sg">${S.sig?`<img src="${esc(S.sig)}" alt="Chữ ký">`:""}</div>
+ <div>Người ký : <b>${esc(DOC_NAME)}</b></div><div>Chức danh : ${esc(DOC_TITLE)}</div><div>Ngày ký : ${dd} thg ${mm}, ${yy}</div></div></div>`;
+ fitPaper();updMeta();
+}
+function fitPaper(){
+ const p=$("#paper"),over=()=>{p.style.minHeight="0";const r=p.offsetHeight/p.offsetWidth;p.style.minHeight="";return r>210/148-0.008};
+ p.classList.remove("fit1","fit2");let lv=0;
+ if(over()){p.classList.add("fit1");lv=1;if(over()){p.classList.add("fit2");lv=2;if(over())lv=3}}
+ const n=$("#pvnote");if(n)n.innerHTML=lv===3?'<span class="pvnote">Quá dài: sẽ in sang trang 2</span>':lv?'<span class="pvnote" style="background:var(--acc2);color:var(--acc)">Đã thu gọn cho vừa 1 trang</span>':"";
+}
+function updMeta(){
+ const n=named().length;
+ $("#rxn").textContent=n;
+ $("#sbcnt").innerHTML="Cộng khoản: <b>"+n+"</b> thuốc";
+ const tot=named().filter(d=>total(d)).length;
+ $("#sum").innerHTML=n?`<b>${n}</b> thuốc · ${tot===n?"đã tính đủ số lượng":`<span style="color:var(--warn)">${n-tot} thuốc chưa có số ngày/liều</span>`}`:"";
+}
+
+/* ===== Danh sách thuốc trong đơn ===== */
+let saveI=-1;
+function dupKeys(){const c={};named().forEach(d=>{const k=norm(d.n).trim();c[k]=(c[k]||0)+1});return c}
+function rowHTML(d,i,dup){
+ const k=norm(d.n).trim(),isDup=k&&dup[k]>1,tt=total(d);
+ return `<div class="rw" data-i="${i}">
+ <div class="no">${i+1}</div>
+ <div class="bd">
+  <div class="r1">
+   <input class="nm" data-d="n" value="${esc(d.n)}" placeholder="Tên thuốc, hàm lượng" autocomplete="off">
+   <input class="ac" data-d="a" value="${esc(d.a)}" placeholder="Hoạt chất" autocomplete="off">
+   <span class="tot${tt?"":" z"}">${tt?"x "+tt+" "+esc(d.unit):"SL: —"}</span>
+   <span class="ra">${isDup?'<span class="tag dup" title="Thuốc này có 2 lần trong đơn">Trùng</span>':""}
+    <button class="ib" data-act="up" title="Lên">↑</button><button class="ib" data-act="down" title="Xuống">↓</button>
+    <button class="ib acc" data-act="save" title="Lưu vào thư viện">★</button><button class="ib dng" data-act="del" title="Xóa khỏi đơn">✕</button></span>
+  </div>
+  <div class="r2">
+   <label><span>Số ngày</span><input class="dy" data-d="days" value="${esc(d.days)}" inputmode="numeric" autocomplete="off"></label>
+   <label><span>Sáng-Trưa-Tối</span><input class="ds" data-dose value="${esc(doseStr(d))}" list="doselist" autocomplete="off" title="Gõ 1-0-1 hoặc 101. Nửa viên: 1/2-0-1/2"></label>
+   <label><span>Đơn vị</span><select data-d="unit">${(UNITS.includes(d.unit)?UNITS:[d.unit,...UNITS]).map(u=>`<option${u===d.unit?" selected":""}>${esc(u)}</option>`).join("")}</select></label>
+   <label><span>Đường dùng</span><input data-d="how" value="${esc(d.how)}" list="howlist" autocomplete="off"></label>
+   <label><span>Thời điểm</span><input data-d="when" value="${esc(d.when)}" list="whenlist" autocomplete="off"></label>
+  </div>
+  <div class="r3"><span class="lb">Cách dùng</span><input data-d="free" value="${esc(d.free)}" placeholder="${esc(autoUsage(d)||"Tự gõ cách dùng nếu khác")}" title="Để trống thì dùng câu tự động (chữ mờ). Gõ vào để thay câu khác." autocomplete="off">${d.g?`<span class="tag grp" title="Nhóm thuốc">${esc(d.g)}</span>`:""}</div>
+  ${saveI===i?`<div class="gsave">Lưu vào nhóm: <input id="gsin" list="grouplist" value="${esc(d.g||"")}" placeholder="Ví dụ: Kháng sinh"><button class="btn sm pri" data-act="gok">Lưu</button><button class="btn sm" data-act="gno">Hủy</button></div>`:""}
+ </div></div>`;
+}
+function drugForm(){
+ const dup=dupKeys();
+ const has=!(S.drugs.length===1&&isBlankRow(S.drugs[0]));
+ $("#rows").innerHTML=(has?"":`<div class="empty">Chưa có thuốc. Gõ tên thuốc vào ô tìm kiếm ở trên rồi bấm <b>Enter</b>, hoặc bấm thuốc ở cột <b>Thư viện</b>, hoặc chọn một <b>Đơn mẫu</b>.</div>`)+(has?S.drugs.map((d,i)=>rowHTML(d,i,dup)).join(""):"");
+ updMeta();
+}
+function updRow(i){
+ const el=$(`.rw[data-i="${i}"]`);if(!el)return;const d=S.drugs[i],tt=total(d);
+ const t=el.querySelector(".tot");t.textContent=tt?"x "+tt+" "+d.unit:"SL: —";t.classList.toggle("z",!tt);
+ el.querySelector('[data-d="free"]').placeholder=autoUsage(d)||"Tự gõ cách dùng nếu khác";
+}
+function flashRow(i,focusSel){
+ const el=$(`.rw[data-i="${i}"]`);if(!el)return;
+ el.classList.add("flash");setTimeout(()=>el.classList.remove("flash"),700);
+ el.scrollIntoView({block:"nearest",behavior:"smooth"});
+ if(focusSel){const f=el.querySelector(focusSel);if(f){f.focus();f.select&&f.select()}}
+}
+function isBlankRow(d){return !(d.n||"").trim()&&!(d.a||"").trim()&&!(d.free||"").trim()&&!String(d.days||"").trim()}
+function addDrug(d,focusSel){
+ d=Object.assign(blank(),clone(d));
+ let i;
+ const last=S.drugs.length-1;
+ if(last>=0&&isBlankRow(S.drugs[last])){S.drugs[last]=d;i=last}else{S.drugs.push(d);i=S.drugs.length-1}
+ drugForm();save();render();flashRow(i,focusSel);
+ return i;
+}
+document.addEventListener("input",e=>{
+ const t=e.target;
+ if(t.dataset.k!==undefined){S[t.dataset.k]=t.value;save();render();return}
+ const rw=t.closest(".rw");if(!rw||t.id==="gsin")return;
+ const i=+rw.dataset.i,d=S.drugs[i];
+ if(t.dataset.d){d[t.dataset.d]=t.value}
+ else if(t.hasAttribute("data-dose")){const r=parseDose(t.value);t.classList.toggle("bad",!r);if(!r)return;[d.m,d.t,d.e]=r}
+ else return;
+ updRow(i);save();render();
+ if(t.dataset.d==="n"){clearTimeout(rw._dt);rw._dt=setTimeout(markDup,400)}
+});
+function markDup(){const dup=dupKeys();$$(".rw").forEach(el=>{const d=S.drugs[+el.dataset.i];const k=norm(d.n).trim();const on=k&&dup[k]>1;let tg=el.querySelector(".tag.dup");if(on&&!tg){el.querySelector(".ra").insertAdjacentHTML("afterbegin",'<span class="tag dup" title="Thuốc này có 2 lần trong đơn">Trùng</span>')}else if(!on&&tg)tg.remove()})}
+document.addEventListener("focusout",e=>{if(e.target.hasAttribute&&e.target.hasAttribute("data-dose")){const rw=e.target.closest(".rw");if(rw){const d=S.drugs[+rw.dataset.i];e.target.value=doseStr(d);e.target.classList.remove("bad")}}});
+$("#rows").addEventListener("click",e=>{
+ const b=e.target.closest("[data-act]");if(!b)return;
+ const i=+b.closest(".rw").dataset.i,a=b.dataset.act;
+ if(a==="del"){S.drugs.splice(i,1);if(!S.drugs.length)S.drugs.push(blank());if(saveI===i)saveI=-1;drugForm();save();render()}
+ else if(a==="up"&&i>0){[S.drugs[i-1],S.drugs[i]]=[S.drugs[i],S.drugs[i-1]];drugForm();save();render();flashRow(i-1)}
+ else if(a==="down"&&i<S.drugs.length-1){[S.drugs[i+1],S.drugs[i]]=[S.drugs[i],S.drugs[i+1]];drugForm();save();render();flashRow(i+1)}
+ else if(a==="save"){
+  const d=S.drugs[i];if(!d.n.trim()){b.closest(".rw").querySelector(".nm").focus();return}
+  saveI=i;drugForm();const g=$("#gsin");g.focus();g.select();
+ }
+ else if(a==="gok"){const d=S.drugs[i];d.g=$("#gsin").value.trim();addLib(d);saveLib();renderLib();saveI=-1;save();drugForm();toast("Đã lưu “"+d.n+"” vào thư viện")}
+ else if(a==="gno"){saveI=-1;drugForm()}
+});
+document.addEventListener("keydown",e=>{
+ if(e.target.id==="gsin"){if(e.key==="Enter"){e.preventDefault();$('[data-act="gok"]').click()}else if(e.key==="Escape"){$('[data-act="gno"]').click()}}
+});
+/* Enter trong ô của một dòng thuốc: nhảy sang ô kế tiếp; ô cuối → về ô tìm thuốc */
+$("#rows").addEventListener("keydown",e=>{
+ if(e.key!=="Enter"||e.target.id==="gsin"||e.target.tagName==="SELECT")return;
+ const rw=e.target.closest(".rw");if(!rw)return;
+ e.preventDefault();
+ const f=[...rw.querySelectorAll("input,select")].filter(x=>x.id!=="gsin");
+ const k=f.indexOf(e.target);
+ if(k>=0&&k<f.length-1){f[k+1].focus();f[k+1].select&&f[k+1].select()}else $("#q").focus();
+});
+$("#add").onclick=()=>{const i=S.drugs.length;S.drugs.push(blank());drugForm();save();render();flashRow(i,".nm")};
+$("#alldok").onclick=()=>{
+ const v=$("#alld").value.trim();if(!(num(v)>0)){$("#alld").focus();return}
+ named().forEach(d=>d.days=v);drugForm();save();render();toast("Đã đặt "+v+" ngày cho "+named().length+" thuốc");
+};
+$("#alld").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();$("#alldok").click()}});
+
+/* ===== Người bệnh ===== */
+function fillForm(){$$("[data-k]").forEach(e=>e.value=S[e.dataset.k]??"");$$("[data-sex]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.sex===S.sex))}
+$("#sex").onclick=e=>{const b=e.target.closest("[data-sex]");if(!b)return;S.sex=b.dataset.sex;fillForm();save();render()};
+document.addEventListener("keydown",e=>{
+ const t=e.target;if(e.key!=="Enter"||!t.dataset||!t.dataset.nx)return;
+ e.preventDefault();const n=document.getElementById(t.dataset.nx);n.focus();n.select&&n.select();
+});
+
+/* ===== Tìm thuốc nhanh ===== */
+let QR=[],QI=0;
+function searchLib(q){
+ const n=norm(q).trim();if(!n)return [];
+ const ws=n.split(/\s+/);
+ return LIB.map((d,i)=>{
+  const N=norm(d.n),A=norm(d.a),G=norm(d.g),Nc=N.replace(/[^a-z0-9]/g,"");let s=0;
+  for(const w of ws){
+   let x=0;const wc=w.replace(/[^a-z0-9]/g,"");
+   if(N.startsWith(w))x=6;else if((" "+N).includes(" "+w))x=4;else if(N.includes(w))x=3;else if(wc&&Nc.includes(wc))x=3;
+   else if((" "+A).includes(" "+w))x=2.5;else if(A.includes(w))x=2;else if(G.includes(w))x=1;
+   if(!x)return null;s+=x;
+  }
+  return {i,s};
+ }).filter(Boolean).sort((a,b)=>b.s-a.s||LIB[a.i].n.localeCompare(LIB[b.i].n,"vi")).slice(0,12);
+}
+function hl(text,q){
+ const ws=norm(q).trim().split(/\s+/).filter(Boolean);if(!ws.length)return esc(text);
+ const nt=norm(text);let mark=new Array(text.length).fill(false);
+ ws.forEach(w=>{let p=nt.indexOf(w);while(p>=0){for(let k=p;k<p+w.length;k++)mark[k]=true;p=nt.indexOf(w,p+w.length)}});
+ let out="",on=false;for(let k=0;k<text.length;k++){if(mark[k]&&!on){out+="<mark>";on=true}if(!mark[k]&&on){out+="</mark>";on=false}out+=esc(text[k])}
+ return out+(on?"</mark>":"");
+}
+function showQ(){
+ const q=$("#q").value,box=$("#qres");
+ if(!q.trim()){box.classList.remove("on");$("#q").setAttribute("aria-expanded","false");return}
+ QR=searchLib(q);if(QI>QR.length)QI=0;
+ const inList=new Set(named().map(d=>norm(d.n).trim()));
+ box.innerHTML=QR.map((r,k)=>{const d=LIB[r.i];return `<div class="qi" role="option" data-qi="${k}" aria-selected="${k===QI}"><div class="n">${hl(d.n,q)}${inList.has(norm(d.n).trim())?' <span class="tag dup">đã có trong đơn</span>':""}</div>${d.g?`<span class="g">${esc(d.g)}</span>`:"<span></span>"}<div class="a">${hl(d.a||"",q)}</div><div class="u">${esc(usage(d))}${total(d)?" · x "+total(d)+" "+esc(d.unit):""}</div></div>`}).join("")
+  +`<div class="qi new" role="option" data-qi="${QR.length}" aria-selected="${QI===QR.length}"><div class="n">＋ Thêm thuốc mới: “${esc(q.trim())}”</div><span></span><div class="a">Chưa có trong thư viện — điền liều rồi bấm ★ để lưu</div></div>`
+  +`<div class="qhint">↑↓ chọn · Enter thêm vào đơn · Esc đóng</div>`;
+ box.classList.add("on");$("#q").setAttribute("aria-expanded","true");
+ const sel=box.querySelector('[aria-selected="true"]');sel&&sel.scrollIntoView({block:"nearest"});
+}
+function pickQ(k){
+ const q=$("#q").value.trim();if(!q)return;
+ if(k<QR.length){addDrug(LIB[QR[k].i]);$("#q").value="";QI=0;showQ();$("#q").focus()}
+ else{const b=blank();b.n=q;$("#q").value="";QI=0;showQ();addDrug(b,".ac")}
+}
+$("#q").addEventListener("input",()=>{QI=0;showQ()});
+$("#q").addEventListener("focus",showQ);
+$("#q").addEventListener("keydown",e=>{
+ const n=QR.length+1;
+ if(e.key==="ArrowDown"){e.preventDefault();QI=(QI+1)%n;showQ()}
+ else if(e.key==="ArrowUp"){e.preventDefault();QI=(QI-1+n)%n;showQ()}
+ else if(e.key==="Enter"){e.preventDefault();if($("#q").value.trim())pickQ(QI)}
+ else if(e.key==="Escape"){$("#q").value="";showQ()}
+ else if(e.key==="Tab"){$("#qres").classList.remove("on")}
+});
+$("#qres").addEventListener("mousedown",e=>{const it=e.target.closest("[data-qi]");if(!it)return;e.preventDefault();pickQ(+it.dataset.qi)});
+document.addEventListener("mousedown",e=>{if(!e.target.closest(".sbox"))$("#qres").classList.remove("on")});
+
+/* ===== Thư viện thuốc ===== */
+let LIB=LS.get(LK,[]);if(!Array.isArray(LIB))LIB=[];
+const storeLib=()=>LS.set(LK,LIB);
+const saveLib=()=>{storeLib();try{syncFile()}catch(e){}ghQueue("lib")};
+let editI=-1,editG=null,rmI=-1,rmT;const collapsed=new Set(LS.get("donthuoc_collapsed",[]));
+const gname=d=>(d.g||"").trim();
+const same=(a,b)=>a.n.trim().toLowerCase()===b.n.trim().toLowerCase();
+function renderLib(){
+ $("#libn").textContent=LIB.length;
+ const names=[...new Set(LIB.map(gname).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"vi"));
+ $("#grouplist").innerHTML=names.map(n=>`<option value="${esc(n)}">`).join("");
+ if(!LIB.length){$("#lib").innerHTML='<p class="hint">Chưa có thuốc nào. Kê thuốc rồi bấm ★ ở dòng thuốc để lưu vào đây.</p>';return}
+ const f=norm($("#lf").value).trim();
+ const map=new Map();
+ LIB.forEach((d,i)=>{if(f&&!(norm(d.n+" "+d.a+" "+d.g).includes(f)))return;const n=gname(d),k=n.toLowerCase();if(!map.has(k))map.set(k,{n,items:[]});map.get(k).items.push(i)});
+ const gs=[...map.values()].sort((a,b)=>!a.n?1:!b.n?-1:a.n.localeCompare(b.n,"vi"));
+ if(!gs.length){$("#lib").innerHTML='<p class="hint">Không tìm thấy thuốc phù hợp.</p>';return}
+ $("#lib").innerHTML=gs.map(g=>{
+  const key=g.n.toLowerCase(),shut=!f&&collapsed.has(key),label=g.n||"Chưa phân nhóm";
+  const head=editG===key
+   ?`<div class="edit"><input id="gin" list="grouplist" value="${esc(g.n)}" placeholder="Tên nhóm mới"><button class="btn sm pri" data-gok="${esc(key)}">OK</button><button class="btn sm" data-gno="1">Hủy</button></div>`
+   :`<div class="ghead"><button class="gtg" data-tg="${esc(key)}"><span>${shut?"▸":"▾"}</span><span class="lbl">${esc(label)}</span><span class="pill">${g.items.length}</span></button>${g.n?`<button class="ib" data-rg="${esc(key)}" title="Đổi tên nhóm">✎</button>`:""}</div>`;
+  const body=shut?"":g.items.map(i=>{const d=LIB[i];
+   if(editI===i)return `<div class="li"><div style="flex:1;min-width:0"><b style="font-size:13px">${esc(d.n)}</b><div class="edit"><input id="din" list="grouplist" value="${esc(gname(d))}" placeholder="Tên nhóm"><button class="btn sm pri" data-mok="${i}">OK</button><button class="btn sm" data-mno="1">Hủy</button></div></div></div>`;
+   return `<div class="li"><button class="main" data-use="${i}" title="Thêm vào đơn"><b>${esc(d.n)}</b><small>${esc(usage(d)||d.a||"")}</small></button><span class="lact"><button class="ib" data-mv="${i}" title="Chuyển nhóm">⇄</button><button class="${rmI===i?"btn sm warnstate":"ib dng"}" data-rm="${i}" title="Xóa khỏi thư viện">${rmI===i?"Xóa?":"✕"}</button></span></div>`}).join("");
+  return `<div class="grp">${head}${body}</div>`}).join("");
+}
+function addLib(d){
+ if(!(d.n||"").trim())return;
+ const c=Object.assign({},d);
+ const j=LIB.findIndex(x=>same(x,c));
+ if(!(c.g||"").trim()&&j>=0)c.g=LIB[j].g||"";c.g=(c.g||"").trim();if(j>=0)LIB[j]=c;else LIB.push(c);
+}
+const cleanDrugs=a=>(Array.isArray(a)?a:[]).filter(x=>x&&typeof x.n==="string"&&x.n.trim()).map(x=>Object.assign(blank(),x,{n:x.n}));
+$("#lf").addEventListener("input",renderLib);
+$("#lib").addEventListener("click",e=>{
+ const b=e.target.closest("button");if(!b)return;const D=b.dataset;
+ if(D.use!==undefined){addDrug(LIB[+D.use])}
+ else if(D.tg!==undefined){collapsed.has(D.tg)?collapsed.delete(D.tg):collapsed.add(D.tg);LS.set("donthuoc_collapsed",[...collapsed]);renderLib()}
+ else if(D.rg!==undefined){editG=D.rg;editI=-1;renderLib();$("#gin").focus()}
+ else if(D.gok!==undefined){const v=$("#gin").value.trim();LIB.forEach(d=>{if(gname(d).toLowerCase()===D.gok)d.g=v});editG=null;saveLib();renderLib()}
+ else if(D.gno!==undefined){editG=null;renderLib()}
+ else if(D.mv!==undefined){editI=+D.mv;editG=null;renderLib();$("#din").focus()}
+ else if(D.mok!==undefined){LIB[+D.mok].g=$("#din").value.trim();editI=-1;saveLib();renderLib()}
+ else if(D.mno!==undefined){editI=-1;renderLib()}
+ else if(D.rm!==undefined){const i=+D.rm;clearTimeout(rmT);if(rmI!==i){rmI=i;renderLib();rmT=setTimeout(()=>{rmI=-1;renderLib()},3000);return}rmI=-1;LIB.splice(i,1);editI=-1;editG=null;saveLib();renderLib()}
+});
+document.addEventListener("keydown",e=>{
+ if(e.target.id!=="gin"&&e.target.id!=="din")return;
+ const box=e.target.parentElement;
+ if(e.key==="Enter"){e.preventDefault();box.querySelector("[data-gok],[data-mok]").click()}
+ else if(e.key==="Escape"){box.querySelector("[data-gno],[data-mno]").click()}
+});
+$("#saveall").onclick=()=>{const n=named();if(!n.length)return;n.forEach(addLib);saveLib();renderLib();toast("Đã lưu "+n.length+" thuốc vào thư viện")};
+
+/* ===== Đơn mẫu ===== */
+let TPL=LS.get(TK,[]);if(!Array.isArray(TPL))TPL=[];
+const cleanTpl=a=>(Array.isArray(a)?a:[]).filter(x=>x&&typeof x.name==="string"&&x.name.trim()&&Array.isArray(x.drugs)).map(x=>({name:x.name.trim(),dx:String(x.dx||""),drugs:cleanDrugs(x.drugs)}));
+TPL=cleanTpl(TPL);
+const storeTpl=()=>LS.set(TK,TPL);
+const saveTpl=()=>{storeTpl();ghQueue("tpl")};
+let rmTp=-1,rmTpT;
+function renderTpl(){
+ $("#tpln").textContent=TPL.length;
+ $("#tpl").innerHTML=TPL.length?TPL.map((t,i)=>`<div class="tp"><b>${esc(t.name)}</b>${t.dx?`<div class="dx">${esc(t.dx)}</div>`:""}<div class="ds">${t.drugs.length} thuốc: ${esc(t.drugs.map(d=>d.n).join(", "))}</div><div class="ac"><button class="btn sm pri" data-tu="${i}" title="Thay thuốc trong đơn bằng đơn mẫu này">Dùng</button><button class="btn sm" data-ta="${i}" title="Thêm thuốc của đơn mẫu vào đơn hiện tại">+ Thêm vào đơn</button><button class="btn sm" data-tw="${i}" title="Ghi đè đơn mẫu bằng thuốc trong đơn hiện tại">Cập nhật</button><button class="btn sm ${rmTp===i?"warnstate":"dng"}" data-tr="${i}">${rmTp===i?"Bấm lần nữa để xóa":"Xóa"}</button></div></div>`).join("")
+  :'<p class="hint">Chưa có đơn mẫu nào.</p>';
+ refreshLists();
+}
+function saveAsTpl(){
+ const nm=$("#tpname").value.trim(),drugs=named();
+ const msg=t=>{$("#tpmsg").textContent=t};
+ if(!drugs.length){msg("Đơn đang trống, chưa có thuốc để lưu.");return}
+ if(!nm){msg("Hãy đặt tên cho đơn mẫu.");$("#tpname").focus();return}
+ const j=TPL.findIndex(t=>t.name.toLowerCase()===nm.toLowerCase());
+ const t={name:nm,dx:S.dx||"",drugs:clone(drugs)};
+ if(j>=0)TPL[j]=t;else TPL.push(t);
+ TPL.sort((a,b)=>a.name.localeCompare(b.name,"vi"));
+ saveTpl();renderTpl();$("#tpname").value="";msg((j>=0?"Đã cập nhật":"Đã lưu")+" đơn mẫu “"+nm+"”.");
+}
+$("#tpsave").onclick=saveAsTpl;
+$("#tpname").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();saveAsTpl()}});
+$("#astpl").onclick=()=>{showTab("tpl");const n=$("#tpname");if(!n.value)n.value=S.dx||"";n.focus();n.select()};
+$("#tpl").addEventListener("click",e=>{
+ const b=e.target.closest("button");if(!b)return;const D=b.dataset;
+ if(D.tu!==undefined){const t=TPL[+D.tu];S.drugs=clone(t.drugs).map(d=>Object.assign(blank(),d));if(!S.drugs.length)S.drugs=[blank()];if(!S.dx.trim()&&t.dx){S.dx=t.dx;fillForm()}drugForm();save();render();toast("Đã dùng đơn mẫu “"+t.name+"”")}
+ else if(D.ta!==undefined){const t=TPL[+D.ta];S.drugs=S.drugs.filter(d=>!isBlankRow(d));t.drugs.forEach(d=>S.drugs.push(Object.assign(blank(),clone(d))));if(!S.drugs.length)S.drugs=[blank()];if(!S.dx.trim()&&t.dx){S.dx=t.dx;fillForm()}drugForm();save();render();toast("Đã thêm "+t.drugs.length+" thuốc")}
+ else if(D.tw!==undefined){const t=TPL[+D.tw],dr=named();if(!dr.length){toast("Đơn đang trống");return}t.drugs=clone(dr);if(S.dx)t.dx=S.dx;saveTpl();renderTpl();toast("Đã cập nhật đơn mẫu “"+t.name+"”")}
+ else if(D.tr!==undefined){const i=+D.tr;clearTimeout(rmTpT);if(rmTp!==i){rmTp=i;renderTpl();rmTpT=setTimeout(()=>{rmTp=-1;renderTpl()},3000);return}rmTp=-1;TPL.splice(i,1);saveTpl();renderTpl()}
+});
+
+/* ===== Đơn gần đây (chỉ trên máy này) ===== */
+let HIST=LS.get(HK,[]);if(!Array.isArray(HIST))HIST=[];
+function recordHist(){
+ if(!named().length)return;
+ const h={at:Date.now(),name:S.name,age:S.age,sex:S.sex,addr:S.addr,dx:S.dx,so:S.so,drugs:clone(named())};
+ const sig=x=>JSON.stringify([x.name,x.age,x.sex,x.addr,x.dx,x.so,x.drugs]);
+ if(HIST[0]&&sig(HIST[0])===sig(h))HIST[0].at=h.at;else HIST.unshift(h);
+ HIST=HIST.slice(0,60);LS.set(HK,HIST);
+ const R=LS.get(XK,{dx:[],addr:[]});
+ const push=(arr,v)=>{v=(v||"").trim();if(!v)return arr;return [v,...arr.filter(x=>x.toLowerCase()!==v.toLowerCase())].slice(0,60)};
+ R.dx=push(R.dx||[],S.dx);R.addr=push(R.addr||[],S.addr);LS.set(XK,R);
+ renderHist();
+}
+function renderHist(){
+ $("#histn").textContent=HIST.length;
+ const f=norm($("#hf").value).trim();
+ const list=HIST.map((h,i)=>({h,i})).filter(({h})=>!f||norm(h.name+" "+h.dx+" "+h.addr).includes(f));
+ $("#hist").innerHTML=list.length?list.map(({h,i})=>{const d=new Date(h.at);return `<div class="tp"><b>${esc((h.name||"(không tên)").toUpperCase())}${h.age?` · ${esc(h.age)} tuổi`:""}</b>${h.dx?`<div class="dx">${esc(h.dx)}</div>`:""}<div class="ds">${d.toLocaleDateString("vi-VN")} ${d.toLocaleTimeString("vi-VN",{hour:"2-digit",minute:"2-digit"})} · ${h.drugs.length} thuốc: ${esc(h.drugs.map(x=>x.n).join(", "))}</div><div class="ac"><button class="btn sm pri" data-ho="${i}" title="Mở lại cả người bệnh và thuốc">Mở lại đơn</button><button class="btn sm" data-hd="${i}" title="Chỉ lấy danh sách thuốc">Chỉ lấy thuốc</button></div></div>`}).join("")
+  :`<p class="hint">${HIST.length?"Không tìm thấy.":"Chưa có đơn nào. Đơn sẽ được ghi lại khi bấm In."}</p>`;
+ refreshLists();
+}
+$("#hf").addEventListener("input",renderHist);
+$("#hist").addEventListener("click",e=>{
+ const b=e.target.closest("button");if(!b)return;const D=b.dataset;
+ if(D.ho!==undefined){const h=HIST[+D.ho];const sig=S.sig;S=Object.assign(def(),clone(h));delete S.at;S.sig=sig;S.date=todayStr();S.drugs=S.drugs.map(d=>Object.assign(blank(),d));if(!S.drugs.length)S.drugs=[blank()];fillForm();drugForm();save();render();toast("Đã mở lại đơn của "+(h.name||"người bệnh"))}
+ else if(D.hd!==undefined){const h=HIST[+D.hd];S.drugs=clone(h.drugs).map(d=>Object.assign(blank(),d));if(!S.drugs.length)S.drugs=[blank()];drugForm();save();render();toast("Đã lấy "+h.drugs.length+" thuốc")}
+});
+function refreshLists(){
+ const R=LS.get(XK,{dx:[],addr:[]});
+ const dx=[...new Set([...(R.dx||[]),...TPL.map(t=>t.dx).filter(Boolean)])];
+ $("#dxlist").innerHTML=dx.map(v=>`<option value="${esc(v)}">`).join("");
+ $("#addrlist").innerHTML=(R.addr||[]).map(v=>`<option value="${esc(v)}">`).join("");
+}
+
+/* ===== Tab cột trái ===== */
+function showTab(k){$$("[data-tab]").forEach(b=>b.setAttribute("aria-selected",b.dataset.tab===k));$$(".pane").forEach(p=>p.classList.toggle("on",p.id==="p_"+k))}
+$(".tabs").onclick=e=>{const b=e.target.closest("[data-tab]");if(b)showTab(b.dataset.tab)};
+
+/* ===== In, đơn mới, phím tắt ===== */
+function doPrint(){window.print()}
+window.addEventListener("beforeprint",recordHist);
+$("#print").onclick=doPrint;$("#print2").onclick=doPrint;
+let rt;
+function resetRx(){
+ const b=$("#reset");
+ if(!rt){b.classList.add("warnstate");b.firstChild.textContent="Bấm lần nữa để xóa đơn";rt=setTimeout(()=>{b.classList.remove("warnstate");b.firstChild.textContent="Đơn mới";rt=0},3000);return}
+ clearTimeout(rt);rt=0;b.classList.remove("warnstate");b.firstChild.textContent="Đơn mới";
+ const sig=S.sig;S=def();S.sig=sig;saveI=-1;save();fillForm();drugForm();render();$("#f_name").focus();
+}
+$("#reset").onclick=resetRx;
+document.addEventListener("keydown",e=>{
+ const typing=/^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName);
+ if(e.key==="F2"||(e.key==="/"&&!typing)){e.preventDefault();$("#q").focus();$("#q").select()}
+ else if(e.key==="F4"){e.preventDefault();$("#f_name").focus();$("#f_name").select()}
+ else if((e.ctrlKey||e.metaKey)&&(e.key==="p"||e.key==="P")){e.preventDefault();doPrint()}
+ else if(e.altKey&&(e.key==="n"||e.key==="N"||e.code==="KeyN")){e.preventDefault();resetRx()}
+});
+
+/* ===== Xem trước: tự co cho vừa cột ===== */
+function fitPv(){const w=$("#pvwrap").clientWidth-28;$("#paper").style.zoom=w>0?Math.min(1,w/560).toFixed(3):1}
+if(window.ResizeObserver)new ResizeObserver(fitPv).observe($("#pvwrap"));else addEventListener("resize",fitPv);
+function setPv(on){document.body.classList.toggle("nopv",!on);$("#tgpv").setAttribute("aria-pressed",on);try{localStorage.setItem(PVK,on?"1":"0")}catch(e){}setTimeout(fitPv,0)}
+let pv0=true;try{pv0=localStorage.getItem(PVK)!=="0"}catch(e){}
+setPv(pv0);
+$("#tgpv").onclick=()=>setPv(document.body.classList.contains("nopv"));
+
+/* ===== Thông báo nhỏ ===== */
+let toT;
+function toast(t){let el=$("#toast");if(!el){el=document.createElement("div");el.id="toast";el.style.cssText="position:fixed;left:50%;bottom:44px;transform:translateX(-50%);background:#14202b;color:#fff;padding:9px 16px;border-radius:8px;font-size:13px;z-index:99;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:opacity .25s;pointer-events:none";document.body.appendChild(el)}el.textContent=t;el.style.opacity="1";clearTimeout(toT);toT=setTimeout(()=>el.style.opacity="0",2000)}
+
+/* ===== Cài đặt ===== */
+const dlg=$("#set");
+$("#openset").onclick=()=>{dlg.showModal?dlg.showModal():dlg.setAttribute("open","")};
+$("#closeset").onclick=()=>dlg.close?dlg.close():dlg.removeAttribute("open");
+dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+dlg.addEventListener("click",e=>{const b=e.target.closest("[data-th]");if(b)setTheme(b.dataset.th)});
+
+/* ----- Chữ ký (chỉ lưu trên máy này) ----- */
+const sm=t=>{$("#sigmsg").textContent=t};
+function showSig(){$("#sigprev").innerHTML=S.sig?`<img src="${esc(S.sig)}" alt="Chữ ký">`:'<small style="color:#666">Chưa có</small>'}
+function setSig(v){S.sig=v||"";try{v?localStorage.setItem(SK,v):localStorage.removeItem(SK)}catch(e){sm("Ảnh quá lớn, không lưu được trên máy này.")}showSig();render()}
+$("#sigpick").onclick=()=>$("#sigf").click();
+$("#sigdel").onclick=()=>{setSig("");sm("Đã xóa chữ ký trên máy này.")};
+$("#sigf").onchange=e=>{
+ const f=e.target.files[0];if(!f)return;
+ const r=new FileReader();
+ if(/\.html?$/i.test(f.name)){
+  r.onload=()=>{const m=String(r.result).match(/data:image\/(?:png|jpe?g|gif|webp);base64,[A-Za-z0-9+\/=]+/);
+   if(m){setSig(m[0]);sm("Đã lấy chữ ký từ file “"+f.name+"”.")}else sm("Không tìm thấy chữ ký trong file này.");e.target.value=""};
+  r.readAsText(f);
+ }else{
+  r.onload=()=>{setSig(r.result);sm("Đã lưu chữ ký trên máy này.");e.target.value=""};
+  r.readAsDataURL(f);
+ }
+};
+
+/* ----- Xuất / nhập thư viện ----- */
+const lm=t=>{$("#libmsg").textContent=t};
+$("#libexp").onclick=()=>{
+ if(!LIB.length){lm("Thư viện đang trống, chưa có gì để xuất.");return}
+ const a=document.createElement("a");
+ a.href=URL.createObjectURL(new Blob([JSON.stringify(LIB,null,1)],{type:"application/json"}));
+ a.download="thu-vien-thuoc.json";document.body.appendChild(a);a.click();a.remove();
+ lm("Đã xuất file thu-vien-thuoc.json.");
+};
+$("#libimp").onclick=()=>$("#libf").click();
+$("#libf").onchange=e=>{
+ const f=e.target.files[0];if(!f)return;
+ const r=new FileReader();
+ r.onload=()=>{
+  try{
+   const a=JSON.parse(r.result);if(!Array.isArray(a))throw 0;
+   const c=cleanDrugs(a);c.forEach(addLib);
+   saveLib();renderLib();lm("Đã nhập "+c.length+" thuốc vào thư viện.");
+  }catch(err){lm("File không đúng định dạng. Hãy chọn file thu-vien-thuoc.json đã xuất từ phần mềm này.")}
+  e.target.value="";
+ };
+ r.readAsText(f);
+};
+
+/* ===== Đồng bộ GitHub (thư viện thuốc + đơn mẫu) ===== */
+const GK="donthuoc_gh";
+let GH={o:"",r:"",t:"",b:"main"};
+try{Object.assign(GH,JSON.parse(localStorage.getItem(GK)||"{}"))}catch(e){}
+if(!GH.o&&/\.github\.io$/i.test(location.hostname)){
+ GH.o=location.hostname.split(".")[0];
+ const seg=location.pathname.split("/").filter(Boolean)[0];
+ GH.r=(seg&&!/\.html?$/i.test(seg))?decodeURIComponent(seg):location.hostname;
+}
+$("#gh_o").value=GH.o;$("#gh_r").value=GH.r;$("#gh_t").value=GH.t;
+const SY={
+ lib:{p:"thu-vien-thuoc.json",dk:"donthuoc_gh_dirty",label:"thư viện",get:()=>LIB,set:a=>{LIB=a},key:x=>x.n.trim().toLowerCase(),clean:cleanDrugs,after:()=>{storeLib();renderLib()}},
+ tpl:{p:"don-mau.json",dk:"donthuoc_gh_dirty_tpl",label:"đơn mẫu",get:()=>TPL,set:a=>{TPL=a},key:x=>x.name.trim().toLowerCase(),clean:cleanTpl,after:()=>{storeTpl();renderTpl()}}
+};
+const ghOn=()=>!!(GH.t&&GH.o&&GH.r);
+function gm(t,state){$("#ghmsg").textContent=t;$("#sbgh").innerHTML=ghOn()||state?`<span class="dot ${state==="warn"?"warn":state==="off"?"off":""}"></span>GitHub: ${esc(t)}`:""}
+const isDirty=y=>{try{return localStorage.getItem(y.dk)==="1"}catch(e){return false}};
+const setDirty=(y,v)=>{try{v?localStorage.setItem(y.dk,"1"):localStorage.removeItem(y.dk)}catch(e){}};
+const toB64=s=>{const u=new TextEncoder().encode(s);let b="";for(let i=0;i<u.length;i+=0x8000)b+=String.fromCharCode.apply(null,u.subarray(i,i+0x8000));return btoa(b)};
+const fromB64=s=>new TextDecoder().decode(Uint8Array.from(atob(String(s).replace(/\s/g,"")),c=>c.charCodeAt(0)));
+const hdrs=()=>({"Accept":"application/vnd.github+json","Authorization":"Bearer "+GH.t,"X-GitHub-Api-Version":"2022-11-28"});
+function api(p,q,opt){
+ opt=opt||{};
+ return fetch("https://api.github.com/repos/"+encodeURIComponent(GH.o)+"/"+encodeURIComponent(GH.r)+"/contents/"+encodeURIComponent(p)+(q||""),{method:opt.method||"GET",cache:"no-store",body:opt.body,headers:hdrs()});
+}
+function ghErr(e){
+ if(e===401)return "Mã truy cập sai hoặc đã hết hạn. Hãy tạo mã mới.";
+ if(e===403)return "Mã truy cập không có quyền ghi vào kho này (cần quyền Contents: Read and write).";
+ if(e===404)return "Không tìm thấy kho. Kiểm tra lại tên tài khoản và tên kho.";
+ return "Không kết nối được GitHub. Dữ liệu vẫn lưu trên máy này, lần sau sẽ tự đẩy lên.";
+}
+async function ghGet(p){
+ const r=await api(p,"?ref="+encodeURIComponent(GH.b)+"&t="+Date.now());
+ if(r.status===404){
+  const k=await fetch("https://api.github.com/repos/"+encodeURIComponent(GH.o)+"/"+encodeURIComponent(GH.r),{cache:"no-store",headers:hdrs()});
+  if(!k.ok)throw k.status;
+  return {sha:null,list:[]};
+ }
+ if(!r.ok)throw r.status;
+ const j=await r.json();
+ let list=[];try{list=JSON.parse(fromB64(j.content)||"[]")}catch(e){}
+ return {sha:j.sha,list};
+}
+function ghQueue(k){const y=SY[k];if(!ghOn())return;setDirty(y,true);clearTimeout(y.tm);y.tm=setTimeout(()=>ghPush(k),1500);gm("đang chờ lưu "+y.label+"…","warn")}
+async function ghPush(k){
+ const y=SY[k];
+ if(!ghOn()){gm("Cần nhập tài khoản, tên kho và mã truy cập trước.","off");return}
+ if(y.busy){y.again=true;return}
+ y.busy=true;gm("đang lưu "+y.label+"…","warn");
+ try{
+  for(let n=0;;n++){
+   const {sha}=await ghGet(y.p);
+   const list=y.get();
+   const body={message:"Cập nhật "+y.label+" ("+list.length+" mục)",content:toB64(JSON.stringify(list,null,1)),branch:GH.b};
+   if(sha)body.sha=sha;
+   const r=await api(y.p,"",{method:"PUT",body:JSON.stringify(body)});
+   if(r.ok){setDirty(y,false);gm("đã lưu "+y.label+" lúc "+new Date().toLocaleTimeString("vi-VN",{hour:"2-digit",minute:"2-digit"}));break}
+   if((r.status===409||r.status===422)&&n<1)continue;
+   throw r.status;
+  }
+ }catch(e){gm(ghErr(e),"warn")}
+ y.busy=false;
+ if(y.again){y.again=false;ghPush(k)}
+}
+/* replace=true: lấy bản trên GitHub làm chuẩn; false: gộp, giữ cả mục chỉ có trên máy này */
+async function ghPull(k,replace,manual){
+ const y=SY[k];
+ try{
+  let list,exists=true;
+  if(ghOn()){const g=await ghGet(y.p);list=g.list;exists=!!g.sha}
+  else{
+   if(location.protocol==="file:"){if(manual)gm("Mở trang từ địa chỉ GitHub Pages để tải dữ liệu.","off");return}
+   const r=await fetch(y.p+"?t="+Date.now(),{cache:"no-store"});
+   if(!r.ok){if(manual)gm("chưa có file "+y.p+" trên trang.","off");return}
+   list=await r.json();exists=true;
+  }
+  const local=y.get().slice(),m=new Map();
+  y.clean(list).forEach(x=>{const key=y.key(x);if(k==="lib"&&m.has(key)&&!x.g)x.g=m.get(key).g;m.set(key,x)});
+  let extra=0;
+  if(!replace||!exists)local.forEach(x=>{const key=y.key(x);if(!m.has(key)){m.set(key,x);extra++}});
+  y.set([...m.values()]);y.after();
+  if(ghOn()&&(extra||!exists))ghPush(k);
+  else gm("đã tải "+y.label+" ("+y.get().length+")"+(ghOn()?"":" — chưa nhập mã nên thay đổi chỉ lưu trên máy này"),ghOn()?"":"off");
+ }catch(e){gm(ghErr(e),"warn")}
+}
+$("#gh_save").onclick=()=>{
+ GH.o=$("#gh_o").value.trim();GH.r=$("#gh_r").value.trim();GH.t=$("#gh_t").value.trim();
+ try{localStorage.setItem(GK,JSON.stringify(GH))}catch(e){}
+ gm("đã lưu cài đặt.");
+ if(ghOn()){ghPull("lib",false,true);ghPull("tpl",false,true)}
+};
+$("#gh_pull").onclick=()=>{ghPull("lib",false,true);ghPull("tpl",false,true)};
+$("#gh_push").onclick=()=>{ghPush("lib");ghPush("tpl")};
+$("#gh_clear").onclick=()=>{GH.t="";$("#gh_t").value="";try{localStorage.setItem(GK,JSON.stringify(GH))}catch(e){}gm("đã xóa mã truy cập khỏi máy này.","off")};
+
+/* ===== Khởi động ===== */
+fillForm();drugForm();render();renderLib();renderTpl();renderHist();fitPv();
+Object.keys(SY).forEach(k=>{if(ghOn()&&isDirty(SY[k]))ghPush(k);else ghPull(k,ghOn(),false)});
+if(!S.name&&!named().length)$("#f_name").focus();
+
+/* ===== Tự lưu thư viện vào file trên máy (Chrome / Edge máy tính) ===== */
+var FH=null,writing=false,pending=false;
+const setBtn=t=>{$("#libfs").textContent=t};
+const idb=()=>new Promise((res,rej)=>{const r=indexedDB.open("donthuoc_fs",1);r.onupgradeneeded=()=>r.result.createObjectStore("h");r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)});
+const idbGet=async k=>{const d=await idb();return new Promise(res=>{const q=d.transaction("h").objectStore("h").get(k);q.onsuccess=()=>res(q.result);q.onerror=()=>res(null)})};
+const idbSet=async(k,v)=>{const d=await idb();return new Promise(res=>{const t=d.transaction("h","readwrite");t.objectStore("h").put(v,k);t.oncomplete=()=>res();t.onerror=()=>res()})};
+async function writeFile(){
+ if(!FH)return;
+ if(writing){pending=true;return}
+ writing=true;
+ try{const w=await FH.createWritable();await w.write(JSON.stringify(LIB,null,1));await w.close()}
+ catch(e){lm("Không ghi được vào file thư viện. Bấm “Kết nối lại file thư viện”.");setBtn("Kết nối lại file thư viện")}
+ writing=false;
+ if(pending){pending=false;writeFile()}
+}
+function syncFile(){writeFile()}
+async function readMerge(){
+ const t=await (await FH.getFile()).text();
+ if(!t.trim())return;
+ try{
+  const a=JSON.parse(t);if(!Array.isArray(a))return;
+  const local=LIB.slice();LIB=[];
+  cleanDrugs(a).forEach(addLib);
+  local.forEach(x=>{if(!LIB.some(y=>same(x,y)))LIB.push(x)});
+ }catch(e){}
+}
+async function connectFile(){
+ try{
+  if(FH){
+   const p=await FH.requestPermission({mode:"readwrite"});
+   if(p!=="granted"){lm("Chưa được cấp quyền truy cập file.");return}
+  }else{
+   FH=await window.showSaveFilePicker({suggestedName:"thu-vien-thuoc.json",types:[{description:"Thư viện thuốc",accept:{"application/json":[".json"]}}]});
+   await idbSet("fh",FH);
+  }
+  await readMerge();saveLib();renderLib();
+  setBtn("Đang đồng bộ: "+FH.name);
+  lm("Đã liên kết file “"+FH.name+"”. Mỗi lần lưu thuốc, file tự cập nhật.");
+ }catch(e){if(!e||e.name!=="AbortError")lm("Không liên kết được file.")}
+}
+$("#libfs").onclick=connectFile;
+(async()=>{
+ if(typeof window.showSaveFilePicker!=="function"){$("#libfs").style.display="none";return}
+ try{FH=await idbGet("fh")||null}catch(e){FH=null}
+ if(FH){
+  let p="prompt";try{p=await FH.queryPermission({mode:"readwrite"})}catch(e){}
+  if(p==="granted"){await readMerge();storeLib();renderLib();setBtn("Đang đồng bộ: "+FH.name)}
+  else setBtn("Kết nối lại file thư viện");
+ }
+})();
+</script>
+</body>
+</html>
