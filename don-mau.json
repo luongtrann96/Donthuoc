@@ -32,39 +32,5 @@
     "free": ""
    }
   ]
- },
- {
-  "name": "VRT",
-  "dx": "",
-  "drugs": [
-   {
-    "n": "Vigentin 500/62.5mg",
-    "a": "Amoxicillin + Clavulanic",
-    "g": "Kháng sinh",
-    "q": "14",
-    "days": "10",
-    "unit": "viên",
-    "how": "Uống",
-    "m": "1",
-    "t": "",
-    "e": "1",
-    "when": "sau ăn",
-    "free": ""
-   },
-   {
-    "n": "Flagyl 250 mg",
-    "a": "Metronidazol",
-    "g": "Kháng sinh",
-    "q": "20",
-    "days": "7",
-    "unit": "viên",
-    "how": "Uống",
-    "m": "2",
-    "t": 0,
-    "e": "2",
-    "when": "sau ăn",
-    "free": ""
-   }
-  ]
  }
 ]
