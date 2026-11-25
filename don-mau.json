@@ -32,5 +32,39 @@
     "free": ""
    }
   ]
+ },
+ {
+  "name": "RLTH",
+  "dx": "Tắc nghẽn ruột khác và/hoặc không xác định- Bán tắc ruột/Rối loạn chức năng ruột",
+  "drugs": [
+   {
+    "n": "No-spa 40 mg",
+    "a": "Drotaverine",
+    "g": "GIẢM ĐAU , GIẢM CO THẮT",
+    "q": "14",
+    "days": "5",
+    "unit": "viên",
+    "how": "Uống",
+    "m": "2",
+    "t": "",
+    "e": "2",
+    "when": "sau ăn",
+    "free": ""
+   },
+   {
+    "n": "Enterogermina Gut Defense 2 tỷ/5ml Opella",
+    "a": "Bacillus clausii (2x10^9cfu)",
+    "g": "",
+    "q": "",
+    "days": "5",
+    "unit": "ống",
+    "how": "Uống",
+    "m": 1,
+    "t": 0,
+    "e": 1,
+    "when": "sau ăn",
+    "free": ""
+   }
+  ]
  }
 ]
