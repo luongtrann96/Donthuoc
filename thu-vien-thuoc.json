@@ -278,5 +278,19 @@
   "e": 1,
   "when": "sau ăn",
   "free": ""
+ },
+ {
+  "n": "Vigentin 875/125mg",
+  "a": "Amoxicillin + Clavulanic",
+  "g": "Kháng sinh",
+  "q": "14",
+  "days": "10",
+  "unit": "viên",
+  "how": "Uống",
+  "m": "1",
+  "t": "",
+  "e": "1",
+  "when": "sau ăn",
+  "free": ""
  }
 ]
