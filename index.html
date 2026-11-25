@@ -382,7 +382,7 @@ dialog::backdrop{background:rgba(8,20,32,.45)}
   </div>
   <div class="sec">
    <h3>Tạo / đổi token.enc.json</h3>
-   <p class="hint">Mã hóa token (ô phía trên) và chữ ký hiện tại bằng một mật khẩu, thành file <b>token.enc.json</b> để đặt trên GitHub. Mật khẩu này chính là mật khẩu trang hỏi mỗi lần vào. Kho là public nên hãy đặt mật khẩu dài, khó đoán (ít nhất 10 ký tự).</p>
+   <p class="hint">Mã hóa token (ô phía trên) và chữ ký hiện tại bằng một mật khẩu, thành file <b>token.enc.json</b> để đặt trên GitHub. Mật khẩu này chính là mật khẩu trang hỏi mỗi lần vào. Kho là public nên hãy đặt mật khẩu dài, khó đoán.</p>
    <div class="row2"><div><label>Mật khẩu mới</label><input id="te_p1" type="password" autocomplete="new-password"></div><div><label>Nhập lại mật khẩu</label><input id="te_p2" type="password" autocomplete="new-password"></div></div>
    <div class="acts"><button class="btn sm pri" id="te_push" title="Cần token đang dùng được để ghi lên GitHub">Tạo và đẩy lên GitHub</button><button class="btn sm" id="te_dl">Tạo và tải file về</button></div>
    <p class="msg" id="temsg"></p>
@@ -1116,7 +1116,7 @@ async function makeEnc(){
  const tok=($("#gh_t").value||GH.t||"").trim(),p1=$("#te_p1").value,p2=$("#te_p2").value;
  if(!tok){tm("Chưa có token. Hãy dán token vào ô “Mã truy cập (token)” ở trên trước.",true);$("#gh_t").focus();return null}
  if(!/^[A-Za-z0-9_]+$/.test(tok)){tm("Token có ký tự lạ. Hãy dán lại đúng mã bắt đầu bằng github_pat_ hoặc ghp_.",true);return null}
- if(p1.length<10){tm("Mật khẩu quá ngắn, cần ít nhất 10 ký tự.",true);$("#te_p1").focus();return null}
+ if(p1.length<6){tm("Mật khẩu quá ngắn, cần ít nhất 6 ký tự.",true);$("#te_p1").focus();return null}
  if(p1!==p2){tm("Hai lần nhập mật khẩu không giống nhau.",true);$("#te_p2").focus();return null}
  if(!hasCrypto()){tm("Trình duyệt này không hỗ trợ mã hóa. Hãy dùng Chrome hoặc Edge.",true);return null}
  tm("Đang mã hóa…");
