@@ -1,5 +1,19 @@
 [
  {
+  "n": "Augmentin 1g GSK",
+  "a": "Amoxicillin, Clavulanic acid",
+  "g": "Kháng sinh",
+  "q": "",
+  "days": "7",
+  "unit": "viên",
+  "how": "Uống",
+  "m": 1,
+  "t": 0,
+  "e": 1,
+  "when": "sau ăn",
+  "free": ""
+ },
+ {
   "n": "Flagyl 250 mg",
   "a": "Metronidazol",
   "g": "Kháng sinh",
@@ -66,20 +80,6 @@
   "m": "1",
   "t": "",
   "e": "1",
-  "when": "sau ăn",
-  "free": ""
- },
- {
-  "n": "Augmentin 1g GSK",
-  "a": "Amoxicillin, Clavulanic acid",
-  "g": "Kháng sinh",
-  "q": "",
-  "days": "7",
-  "unit": "viên",
-  "how": "Uống",
-  "m": 1,
-  "t": 0,
-  "e": 1,
   "when": "sau ăn",
   "free": ""
  },
