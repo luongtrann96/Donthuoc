@@ -390,5 +390,19 @@
   "e": 0,
   "when": "sau ăn",
   "free": "6 viên trong 4 ngày đầu, 4 viên trong 3 ngày tiếp theo."
+ },
+ {
+  "n": "Sorbitol 5g DHG",
+  "a": "Sorbitol",
+  "g": "TRĨ , NHUẬN TRÀNG",
+  "q": "",
+  "days": "1",
+  "unit": "hộp",
+  "how": "Uống",
+  "m": 1,
+  "t": 0,
+  "e": 0,
+  "when": "sau ăn",
+  "free": "Uống 1- 3 gói/ngày. Uống trước bữa ăn hoặc khi có triệu chứng khó tiêu."
  }
 ]
