@@ -350,6 +350,20 @@
   "free": "Uống sáng 01 gói , tối 01 gói sau ăn 2 tiếng"
  },
  {
+  "n": "Edoz DHG",
+  "a": "Natri hydro carbonat (802mg), Acid Citric khan (620mg)",
+  "g": "ỨC CHẾ ACID , GIẢM TIẾT",
+  "q": "",
+  "days": "5",
+  "unit": "gói",
+  "how": "Uống",
+  "m": 2,
+  "t": 0,
+  "e": 2,
+  "when": "sau ăn 1h",
+  "free": ""
+ },
+ {
   "n": "Enterogermina Gut Defense 2 tỷ/5ml Opella",
   "a": "Bacillus clausii (2x10^9cfu)",
   "g": "Men vi sinh",
