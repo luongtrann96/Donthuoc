@@ -70,6 +70,34 @@
   "free": ""
  },
  {
+  "n": "Alpha choay",
+  "a": "Alphachymotrypsin",
+  "g": "Kháng viêm",
+  "q": "1",
+  "days": "",
+  "unit": "hộp",
+  "how": "Ngậm dưới lưỡi",
+  "m": "2",
+  "t": "2",
+  "e": "2",
+  "when": "sau ăn",
+  "free": ""
+ },
+ {
+  "n": "Medrol 16mg Pfizer",
+  "a": "Methylprednisolone",
+  "g": "Kháng viêm",
+  "q": "",
+  "days": "3",
+  "unit": "viên",
+  "how": "Uống",
+  "m": 1,
+  "t": 0,
+  "e": "",
+  "when": "sau ăn",
+  "free": "Uống sáng 01 viên lúc 8h sáng sau ăn no"
+ },
+ {
   "n": "Diclofenac DHG",
   "a": "Diclofenac",
   "g": "GIẢM ĐAU , GIẢM CO THẮT",
@@ -138,34 +166,6 @@
   "e": "",
   "when": "sau ăn",
   "free": "Uống 02 viên lúc đau nhiều"
- },
- {
-  "n": "Alpha choay",
-  "a": "Alphachymotrypsin",
-  "g": "Kháng viêm",
-  "q": "1",
-  "days": "",
-  "unit": "hộp",
-  "how": "Ngậm dưới lưỡi",
-  "m": "2",
-  "t": "2",
-  "e": "2",
-  "when": "sau ăn",
-  "free": ""
- },
- {
-  "n": "Medrol 16mg Pfizer",
-  "a": "Methylprednisolone",
-  "g": "Kháng viêm",
-  "q": "",
-  "days": "3",
-  "unit": "viên",
-  "how": "Uống",
-  "m": 1,
-  "t": 0,
-  "e": "",
-  "when": "sau ăn",
-  "free": "Uống sáng 01 viên lúc 8h sáng sau ăn no"
  },
  {
   "n": "Medrol 4mg Pfizer",
